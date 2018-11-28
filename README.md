@@ -22,7 +22,7 @@ Later, once you've got the basics down, they'd really like certain users to be a
 
 ## What you've got
 
-The original developers left you a rough client/server architecture. The server seems to have some authentication code on it. The client looks as if they were starting to sketch out a layout using [Semantic UI React](https://react.semantic-ui.com).
+The original developers left you a rough client/server architecture. The server seems to have some authentication code on it. The client looks as if they were starting to sketch out a layout using [Semantic UI React](https://react.semantic-ui.com). And hey, look, there's a few tests in there!
 
 There's a couple of database tables: one primitive table labelled "fish", and a users table with a test user in it. To be frank, it looks like someone wrote a demo and tried to turn it into a functioning application...
 

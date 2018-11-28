@@ -1,8 +1,8 @@
 {
-  "name": "boilerplate-react-webpack",
-  "version": "0.2.2",
-  "description": "A webpack React starter",
-  "repository": "https://github.com/dev-academy-challenges/boilerplate-react-webpack.git",
+  "name": "fishlist",
+  "version": "0.1.0",
+  "description": "A list of fish",
+  "repository": "https://github.com/dev-academy-challenges/fishlist.git",
   "main": "server/index.js",
   "author": "EDA",
   "license": "ISC",
