@@ -1,9 +1,9 @@
 const connection = require('./')
 
-function getFish (db = connection) {
+function get (db = connection) {
   return db('fish')
 }
 
 module.exports = {
-  getFish
+  get
 }

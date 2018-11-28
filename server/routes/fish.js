@@ -1,12 +1,12 @@
 const express = require('express')
 
-const db = require('../db')
+const fish = require('../db/fish')
 
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  db.getFish()
-    .then(fish => res.json(fish))
+  fish.get()
+    .then(fish => res.status(200).json(fish))
 })
 
 module.exports = router
