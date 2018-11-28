@@ -11,7 +11,7 @@ function create (user, db = connection) {
         hash
       })
     })
-    .then(([ id ]) => getById(id))
+    .then(([ id ]) => getById(id, db))
 }
 
 function get (db = connection) {

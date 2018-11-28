@@ -1,8 +1,8 @@
 const express = require('express')
 
-const users = require('./db/users')
-const hashing = require('./auth/hashing')
-const tokens = require('./auth/tokens')
+const users = require('../db/users')
+const hashing = require('../auth/hashing')
+const tokens = require('../auth/tokens')
 
 const router = express.Router()
 
