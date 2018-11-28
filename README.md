@@ -1,28 +1,39 @@
-# A starter webpack project for React
+# Fish List
 
-This is a starter project that uses webpack to transpile and bundle ES6 React code. To use, consider these steps:
+Oh no! The client previously hired an unscrupulous development team who under-bid for the contract and eventually reneged on it, leaving the product not even close to finished. Now it's on you. Somehow, you've got to take the code they left behind and turn it into a working product.
 
-* Fork this repo
-* Rename your repo according to the app you're building
+## The product
 
-```sh
-git clone https://github.com/[your-account]/[your-app].git
-cd [your-app] && yarn
-```
+![A list of fish](fishlist.png)
 
-To start the development server with a watcher that rebuilds your code, run `yarn dev`. The assets built by webpack are placed in `server/public`. This folder is defined as a static folder in an Express.js server that can be started with `npm run server`.
+The client wants an app that can display a list of fish species in the waters around New Zealand and indicate which ones are best for consumers to choose in order to preserve fragile ecosystems and discourage overfishing. They'd like something similar to Forest & Bird's [Best Fish Guide](https://www.forestandbird.org.nz/sites/default/files/2018-05/Best%20Fish%20Guide%20-%20Pocket%20Guide.pdf), but in a web application with some more bells and whistles.
 
-Additional components should be placed in `client/components`.
+They'd definitely like it to be colourful, but how it's visualised is up to you and your team to decide. However you display the fish, they should be able to be viewed by:
 
-## Separate client/server
+* best choice
+* worst choice
+* alphabetical (and reverse)
 
-The boilerplate is also set up to host the client using `webpack-dev-server` with hot module reloading etc. To use this method, in one terminal run:
-```sh
-yarn client
-```
-and in the other:
-```sh
-yarn server
-```
-The client will be available on http://localhost:8080 and the server on http://localhost:3000. Note that you will still need to manage CORS between the two, as they are on different ports.
+There should also be a live search feature that updates the visible fish as you type.
 
+Later, once you've got the basics down, they'd really like certain users to be able to add and edit fish, view the fish individually for more information on species and environmental threat, upload pictures, and more. Their feature ideas are as deep as te moana!
+
+(Oh, and they don't have the budget for a full native mobile build-out just yet, but if you managed to make it into a PWA they certainly wouldn't say no!)
+
+## What you've got
+
+The original developers left you a rough client/server architecture. The server seems to have some authentication code on it. The client looks as if they were starting to sketch out a layout using [Semantic UI React](https://react.semantic-ui.com).
+
+There's a couple of database tables: one primitive table labelled "fish", and a users table with a test user in it. To be frank, it looks like someone wrote a demo and tried to turn it into a functioning application...
+
+## Your team
+
+Luckily, you have some senior developers supervising the work ahead. Because everyone wants a good result for the clients, there will be some constraints around how product development proceeds:
+
+* no code committed to master (all PRs to be submitted to the `development` branch)
+* all work takes place on a new feature branch
+* no work gets done without an accompanying GitHub Projects ticket
+* all PRs will be reviewed before merging
+* all PRs will be accompanied by at least one test
+
+You can organise yourselves however you like. Think about what learning goals you still have at this stage.
