@@ -46,3 +46,7 @@ Luckily, you have some senior developers supervising the work ahead. Because eve
 
 You can organise yourselves however you like. Think about what learning goals you still have at this stage. What would you like to learn over the next few days?
 
+## Good luck!
+
+And may the fish be with you.
+
