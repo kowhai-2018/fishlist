@@ -1,12 +1,5 @@
 module.exports = {
 
-  flargle: {
-    client: 'wargle',
-    connection: {
-      filename: './wombat'
-    }
-  },
-
   development: {
     client: 'sqlite3',
     connection: {
