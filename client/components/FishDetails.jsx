@@ -23,29 +23,29 @@ class FishDetails extends React.Component {
               <Icon onClick={() => history.back()} color='green' name='arrow circle left' size='huge' />
             </Grid.Column>
             <Grid.Column>
-              <Header size='huge' textAlign='center'>Lorem</Header> {/* This is where the props for the fish name will go */}
+              <Header size='huge' textAlign='center'>{this.props.fish[0].fish_id}</Header> {/* This is where the props for the fish name will go */}
             </Grid.Column>
             <Grid.Column>
-              <Image circular align='right' size='tiny' src='https://placekitten.com/200/200'></Image> {/* This is where the props for the image will go */}
+              <Image circular align='right' size='tiny' src={this.props.fish[0].image}></Image> {/* This is where the props for the image will go */}
             </Grid.Column>
           </Grid>
         </Container>
         <Divider hidden />
         <Container>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus quaerat autem porro, iusto dolorem perferendis laudantium assumenda, necessitatibus recusandae quis in ipsam fugit aspernatur delectus ducimus. Fugiat voluptatem corrupti est?</p> {/* This is where the props for the description will go */}
-          <a href='https://en.wikipedia.org/wiki/P%C4%81ua'><Button basic color='blue' content='More info' icon='info circle' labelPosition='left'/></a> {/* This is where the props for the 'more info' link will go */}
+          <p>{this.props.fish[0].description}</p> {/* This is where the props for the description will go */}
+          <a href={this.props.fish[0].links}><Button basic color='blue' content='More info' icon='info circle' labelPosition='left'/></a> {/* This is where the props for the 'more info' link will go */}
         </Container>
         <Divider />
         <Container>
           <Grid columns={2} doubling stackable>
             <Grid.Column align='left'>
               <Placeholder style={{height: 300, width: 480}}>
-                <Placeholder.Image /> {/* This is where the props for the video will go */}
+                <Image src={this.props.fish[0].image}/>
               </Placeholder>
             </Grid.Column>
             <Grid.Column align='right'>
               <Placeholder style={{height: 300, width: 480}} >
-                <Placeholder.Image /> {/* This is where the props for the image will go */}
+                {/* <div className="ui video" data-source={this.props.fish[0].video} data-id="i_mKY2CQ9Kk" data-image="/images/cat.jpg"></div> */}
               </Placeholder>
             </Grid.Column>
           </Grid>
