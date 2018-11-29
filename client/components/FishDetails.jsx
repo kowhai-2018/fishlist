@@ -23,7 +23,7 @@ class FishDetails extends React.Component {
               <Icon onClick={() => history.back()} color='green' name='arrow circle left' size='huge' />
             </Grid.Column>
             <Grid.Column>
-              <Header size='huge' textAlign='center'>{this.props.fish[0].fish_id}</Header> {/* This is where the props for the fish name will go */}
+              <Header size='huge' textAlign='center'>{this.props.fish[0].name}</Header> {/* This is where the props for the fish name will go */}
             </Grid.Column>
             <Grid.Column>
               <Image circular align='right' size='tiny' src={this.props.fish[0].image}></Image> {/* This is where the props for the image will go */}
@@ -39,7 +39,7 @@ class FishDetails extends React.Component {
         <Container>
           <Grid columns={2} doubling stackable>
             <Grid.Column align='left'>
-              <Placeholder style={{height: 300, width: 480}}>
+              <Placeholder style={{width: 800}}>
                 <Image src={this.props.fish[0].image}/>
               </Placeholder>
             </Grid.Column>
