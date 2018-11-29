@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {getFish, orderAZ} from '../actions'
+import {getFish, orderAZ, orderZA} from '../actions'
 import Fish from './Fish'
 
 class FishList extends React.Component {
@@ -17,7 +17,11 @@ class FishList extends React.Component {
     return (
       <React.Fragment>
         <div>
-          <button onClick={() => this.props.orderAZ('AZ')}>A-Z</button>
+          <select>
+            <option onClick={() => this.props.orderAZ('AZ')}>A-Z</option>
+          </select>
+          {/* <button onClick={() => this.props.orderAZ('AZ')}>A-Z</button>
+          <button onClick={() => this.props.orderZA('ZA')}>Z-A</button> */}
         </div>
         {this.props.info.error && <div>{this.props.info.error}</div>}
         <ul>
@@ -43,9 +47,30 @@ function sortingAZ (items) {
   })
 }
 
+function sortingZA (items) {
+  items.sort((a, b) => {
+    let nameA = a.name.toUpperCase()
+    let nameB = b.name.toUpperCase()
+    if (nameA > nameB) {
+      return -1
+    }
+    if (nameA < nameB) {
+      return 1
+    }
+    return 0
+  })
+}
+
 const mapStateToProps = state => {
   if (state.sort.sortOrder == 'AZ') {
     sortingAZ(state.fish)
+    return {
+      fish: state.fish,
+      info: state.info,
+      sortOrder: state.sort.sortOrder
+    }
+  } else if (state.sort.sortOrder == 'ZA') {
+    sortingZA(state.fish)
     return {
       fish: state.fish,
       info: state.info,
@@ -62,7 +87,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getFish: () => dispatch(getFish()),
-    orderAZ: (x) => dispatch(orderAZ(x))
+    orderAZ: (x) => dispatch(orderAZ(x)),
+    orderZA: (x) => dispatch(orderZA(x))
   }
 }
 

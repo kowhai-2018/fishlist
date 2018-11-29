@@ -27,6 +27,13 @@ export function orderAZ (sortOrder) {
   }
 }
 
+export function orderZA (sortOrder) {
+  return {
+    type: 'SORT_ZA',
+    sortOrder
+  }
+}
+
 export function getFish () {
   return dispatch => {
     dispatch(getFishPending())
