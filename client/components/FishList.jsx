@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Input} from 'semantic-ui-react'
 
 import {getFish} from '../actions'
 import Fish from './Fish'
@@ -17,6 +18,7 @@ class FishList extends React.Component {
     return (
       <React.Fragment>
         {this.props.info.error && <div>{this.props.info.error}</div>}
+        <Input icon='search' placeholder='Start typing to filter...' />
         <ul>
           {this.props.fish.map(fish =>
             <Fish key={fish.id} fishData={fish} />)}
