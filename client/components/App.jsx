@@ -15,7 +15,7 @@ class App extends React.Component {
           <Container style={{marginTop: 75}}>
             <Switch>
               <Route exact path='/' component={FishList} />
-              <Route path='/fish/:name' component={FishDetails} />
+              <Route path='/fish/:id' component={FishDetails} />
             </Switch>
           </Container>
         </React.Fragment>

@@ -3,7 +3,6 @@ import {Container, Grid, Icon, Image, Header, Divider, Button, Placeholder} from
 import {Link} from 'react-router-dom'
 
 const FishDetails = ({match}) => {
-
   const name = (match.params.name)
 
   return (
