@@ -33,7 +33,7 @@ router.post('/new', (req, res) => {
   const fishMethod = {
     method: req.body.method
   }
-  db.createFish(newFish, fishDetail, fishLevel, fishMethod)
+  fish.createFish(newFish, fishDetail, fishLevel, fishMethod)
     .then(() => {
       res.redirect('/')
     })
