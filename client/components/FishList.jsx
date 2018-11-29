@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 
 import {getFish, orderAZ, orderZA} from '../actions'
 import Fish from './Fish'
+import { Dropdown, Menu } from 'semantic-ui-react'
 
 class FishList extends React.Component {
   componentDidMount () {
@@ -17,11 +18,16 @@ class FishList extends React.Component {
     return (
       <React.Fragment>
         <div>
-          <select>
-            <option onClick={() => this.props.orderAZ('AZ')}>A-Z</option>
-          </select>
-          {/* <button onClick={() => this.props.orderAZ('AZ')}>A-Z</button>
-          <button onClick={() => this.props.orderZA('ZA')}>Z-A</button> */}
+          <Menu vertical>
+            <Dropdown item text='Sort By'>
+              <Dropdown.Menu>
+                <Dropdown.Item onClick={() => this.props.orderAZ('AZ')}>A-Z</Dropdown.Item>
+                <Dropdown.Item onClick={() => this.props.orderZA('ZA')}>Z-A</Dropdown.Item>
+                <Dropdown.Item>Threat Level</Dropdown.Item>
+                <Dropdown.Item>Method</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Menu>
         </div>
         {this.props.info.error && <div>{this.props.info.error}</div>}
         <ul>
