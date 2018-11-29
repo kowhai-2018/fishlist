@@ -1,9 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
-
-import {getFish, orderAZ, orderZA} from '../actions'
-import Fish from './Fish'
 import { Dropdown, Menu } from 'semantic-ui-react'
+
+import { getFish, orderAZ, orderZA } from '../actions/fish'
+import Fish from './Fish'
 
 class FishList extends React.Component {
   componentDidMount () {

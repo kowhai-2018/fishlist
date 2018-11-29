@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loginFailure matches the last snapshot 1`] = `
+Object {
+  "error": "badness happened",
+  "type": "LOGIN_FAILURE",
+}
+`;
+
+exports[`loginPending matches the last snapshot 1`] = `
+Object {
+  "type": "LOGIN_PENDING",
+}
+`;
+
+exports[`loginSuccess matches the last snapshot 1`] = `
+Object {
+  "type": "LOGIN_SUCCESS",
+}
+`;
+
+exports[`registerFailure matches the last snapshot 1`] = `
+Object {
+  "error": "Username taken",
+  "type": "REGISTER_FAILURE",
+}
+`;
+
+exports[`registerPending matches the last snapshot 1`] = `
+Object {
+  "type": "REGISTER_PENDING",
+}
+`;
+
+exports[`registerSuccess matches the last snapshot 1`] = `
+Object {
+  "type": "REGISTER_SUCCESS",
+}
+`;
