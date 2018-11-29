@@ -14,9 +14,13 @@ function checkUser (req, res, next) {
   const { username, password } = req.body
 
   users.getByUsername(username)
-    .then(({ id, hash }) => {
-      res.locals.userId = id
-      return hashing.verify(hash, password)
+    .then(u => {
+      if (!u) {
+        return next(new Error('Unknown user.'))
+      }
+
+      res.locals.userId = u.id
+      return hashing.verify(u.hash, password)
     })
     .then(verified => {
       if (!verified) {
@@ -69,6 +73,8 @@ function validateLogin (req, res, next) {
   if (!password) {
     return next(new Error('No password provided.'))
   }
+
+  next()
 }
 
 function validateRegistration (req, res, next) {
@@ -85,6 +91,8 @@ function validateRegistration (req, res, next) {
   if (!email) {
     return next(new Error('No email provided.'))
   }
+
+  next()
 }
 
 module.exports = router
