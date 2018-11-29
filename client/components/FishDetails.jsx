@@ -1,10 +1,8 @@
 import React from 'react'
 import {Container, Grid, Icon, Image, Header, Divider, Button, Placeholder} from 'semantic-ui-react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 
-const FishDetails = ({match}) => {
-  const name = (match.params.name)
-
+const FishDetails = () => {
   return (
     <div>
       <Container>
@@ -13,7 +11,7 @@ const FishDetails = ({match}) => {
             <Icon onClick={() => history.back()} color='green' name='arrow circle left' size='huge' />
           </Grid.Column>
           <Grid.Column>
-            <Header size='huge' textAlign='center'>{name}</Header> {/* This is where the props for the fish name will go */}
+            <Header size='huge' textAlign='center'>Lorem</Header> {/* This is where the props for the fish name will go */}
           </Grid.Column>
           <Grid.Column>
             <Image circular align='right' size='tiny' src='https://placekitten.com/200/200'></Image> {/* This is where the props for the image will go */}
