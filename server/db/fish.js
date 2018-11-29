@@ -4,6 +4,12 @@ function get (db = connection) {
   return db('fish')
 }
 
+function addFish (newFish, db = connection) {
+  return db('fish')
+  .insert(newFish)
+}
+
 module.exports = {
-  get
+  get,
+  addFish
 }
