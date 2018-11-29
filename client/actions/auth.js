@@ -39,3 +39,6 @@ export const register = (username, password, email) => dispatch => {
     })
     .catch(err => dispatch(registerFailure(err.response.body.error)))
 }
+
+export const logout = () => ({ type: 'LOGOUT' })
+  

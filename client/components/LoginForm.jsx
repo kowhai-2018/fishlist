@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Menu, Input, Button } from 'semantic-ui-react'
 
 import LogoutButton from './LogoutButton'
-import { login } from '../actions/auth'
+import { login, loginFailure } from '../actions/auth'
 
 class LoginForm extends React.Component {
   state = {
@@ -26,10 +26,13 @@ class LoginForm extends React.Component {
     }
 
     login(username, password)
+    this.setState({ username: '', password: '' })
   }
 
   render () {
-    const { loggedIn, pending } = this.props.auth
+    const { error, loggedIn, pending } = this.props.auth
+    const usernameError = error && error.includes('username')
+    const passwordError = error && error.includes('password')
 
     if (loggedIn) {
       return <LogoutButton />
@@ -39,6 +42,7 @@ class LoginForm extends React.Component {
       <React.Fragment>
         <Menu.Item position='right'>
           <Input
+            error={usernameError}
             name='username'
             onChange={this.changeHandler}
             placeholder='Username'
@@ -46,9 +50,11 @@ class LoginForm extends React.Component {
         </Menu.Item>
         <Menu.Item>
           <Input
+            error={passwordError}
             name='password'
             onChange={this.changeHandler}
             placeholder='Password'
+            type='password'
             value={this.state.password} />
         </Menu.Item>
 
@@ -68,7 +74,8 @@ class LoginForm extends React.Component {
 const mapStateToProps = ({ auth }) => ({ auth })
 
 const mapDispatchToProps = dispatch => ({
-  login: (username, password) => dispatch(login(username, password))
+  login: (username, password) => dispatch(login(username, password)),
+  loginFailure: error => dispatch(loginFailure(error))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)

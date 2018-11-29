@@ -2,7 +2,7 @@ import { getToken } from '../utils/tokens'
 
 const defaultState = {
   error: null,
-  loggedIn: getToken(),
+  loggedIn: !!getToken(),
   newRegistration: false,
   pending: false
 }
@@ -41,6 +41,12 @@ export default function authReducer (state = defaultState, { type, error }) {
         loggedIn: true,
         newRegistration: true,
         pending: false
+      }
+
+    case 'LOGOUT':
+      return {
+        ...state,
+        loggedIn: false
       }
 
     default:
