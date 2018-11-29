@@ -77,6 +77,7 @@ function sortingHighThreat (items) {
 }
 
 function sortingLowThreat (items) {
+  console.log('lowthreat called')
   items.sort((a, b) => {
     let levelA = Number(a.level_id)
     let levelB = Number(b.level_id)

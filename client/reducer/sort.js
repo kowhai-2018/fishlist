@@ -18,6 +18,12 @@ export default function sortReducer (state = {}, action) {
         sortOrder: 'HIGHTHREAT'
       }
 
+      case 'SORT_LOW_THREAT':
+      return {
+        ...state,
+        sortOrder: 'LOWTHREAT'
+      }
+
     default:
       return {
         ...state,
