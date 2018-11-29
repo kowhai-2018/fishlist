@@ -17,5 +17,24 @@ router.get('/:id', (req, res) => {
     .then(fishDetail => res.status(200).json(fishDetail))
 })
 
+router.post('/new', (req, res) => {
+  const newFish = {
+    name: req.body.name
+  }
+  const fishDetail = {
+    description: req.body.description,
+    image: req.body.image,
+    links: req.body.links,
+    video: req.body.video
+  }
+  db.createFish(newFish)
+    .then(
+      db.createFishDetail(fishDetail)
+    )
+    .then(() => {
+      res.redirect('/')
+    })
+})
+
 
 module.exports = router
