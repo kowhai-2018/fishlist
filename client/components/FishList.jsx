@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
 import { getFish } from '../actions/fish'
 import Fish from './Fish'
