@@ -1,30 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {getFish} from '../actions'
+import {getFish, orderAZ, orderZA} from '../actions'
 import Fish from './Fish'
 
 class FishList extends React.Component {
   componentDidMount () {
     this.props.getFish()
-  }
-
-  test () {
-    console.log('value has been selected')
-  }
-
-  sortingAZ (items) {
-    items.sort((a, b) => {
-      let nameA = a.name.toUpperCase()
-      let nameB = b.name.toUpperCase()
-      if (nameA < nameB) {
-        return -1
-      }
-      if (nameA > nameB) {
-        return 1
-      }
-      return 0
-    })
   }
 
   render () {
@@ -35,7 +17,11 @@ class FishList extends React.Component {
     return (
       <React.Fragment>
         <div>
-          <button onClick={() => this.sortingAZ(this.props.fish)}>A-Z</button>
+          <select>
+            <option onClick={() => this.props.orderAZ('AZ')}>A-Z</option>
+          </select>
+          {/* <button onClick={() => this.props.orderAZ('AZ')}>A-Z</button>
+          <button onClick={() => this.props.orderZA('ZA')}>Z-A</button> */}
         </div>
         {this.props.info.error && <div>{this.props.info.error}</div>}
         <ul>
@@ -47,16 +33,62 @@ class FishList extends React.Component {
   }
 }
 
+function sortingAZ (items) {
+  items.sort((a, b) => {
+    let nameA = a.name.toUpperCase()
+    let nameB = b.name.toUpperCase()
+    if (nameA < nameB) {
+      return -1
+    }
+    if (nameA > nameB) {
+      return 1
+    }
+    return 0
+  })
+}
+
+function sortingZA (items) {
+  items.sort((a, b) => {
+    let nameA = a.name.toUpperCase()
+    let nameB = b.name.toUpperCase()
+    if (nameA > nameB) {
+      return -1
+    }
+    if (nameA < nameB) {
+      return 1
+    }
+    return 0
+  })
+}
+
 const mapStateToProps = state => {
-  return {
-    fish: state.fish,
-    info: state.info
+  if (state.sort.sortOrder == 'AZ') {
+    sortingAZ(state.fish)
+    return {
+      fish: state.fish,
+      info: state.info,
+      sortOrder: state.sort.sortOrder
+    }
+  } else if (state.sort.sortOrder == 'ZA') {
+    sortingZA(state.fish)
+    return {
+      fish: state.fish,
+      info: state.info,
+      sortOrder: state.sort.sortOrder
+    }
+  } else {
+    return {
+      fish: state.fish,
+      info: state.info
+    }
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getFish: () => dispatch(getFish())
+    getFish: () => dispatch(getFish()),
+    orderAZ: (x) => dispatch(orderAZ(x)),
+    orderZA: (x) => dispatch(orderZA(x))
   }
 }
 
