@@ -70,23 +70,14 @@ function sortingZA (items) {
 const mapStateToProps = state => {
   if (state.sort.sortOrder == 'AZ') {
     sortingAZ(state.fish)
-    return {
-      fish: state.fish,
-      info: state.info,
-      sortOrder: state.sort.sortOrder
-    }
+ 
   } else if (state.sort.sortOrder == 'ZA') {
     sortingZA(state.fish)
-    return {
-      fish: state.fish,
-      info: state.info,
-      sortOrder: state.sort.sortOrder
-    }
-  } else {
-    return {
-      fish: state.fish,
-      info: state.info
-    }
+  } 
+  return {
+    fish: state.fish,
+    info: state.info,
+    sortOrder: state.sort.sortOrder
   }
 }
 
