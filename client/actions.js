@@ -34,9 +34,16 @@ export function orderZA (sortOrder) {
   }
 }
 
-export function orderThreat (sortOrder) {
+export function orderHighThreat (sortOrder) {
   return {
-    type: 'SORT_THREAT',
+    type: 'SORT_HIGH_THREAT',
+    sortOrder
+  }
+}
+
+export function orderLowThreat (sortOrder) {
+  return {
+    type: 'SORT_LOW_THREAT',
     sortOrder
   }
 }

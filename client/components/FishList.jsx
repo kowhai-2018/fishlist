@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {getFish, orderAZ, orderZA, orderThreat} from '../actions'
+import {getFish, orderAZ, orderZA, orderHighThreat, orderLowThreat} from '../actions'
 import Fish from './Fish'
 import {Dropdown, Menu} from 'semantic-ui-react'
 
@@ -23,7 +23,8 @@ class FishList extends React.Component {
               <Dropdown.Menu>
                 <Dropdown.Item onClick={() => this.props.orderAZ('AZ')}>A-Z</Dropdown.Item>
                 <Dropdown.Item onClick={() => this.props.orderZA('ZA')}>Z-A</Dropdown.Item>
-                <Dropdown.Item onClick={() => this.props.orderThreat('THREAT')}>Threat Level</Dropdown.Item>
+                <Dropdown.Item onClick={() => this.props.orderLowThreat('LOWTHREAT')}>Threat Level (Low-High)</Dropdown.Item>
+                <Dropdown.Item onClick={() => this.props.orderHighThreat('HIGHTHREAT')}>Threat Level (High-Low)</Dropdown.Item>
                 <Dropdown.Item>Method</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
@@ -67,7 +68,15 @@ function sortingZA (items) {
   })
 }
 
-function sortingThreat (items) {
+function sortingHighThreat (items) {
+  items.sort((a, b) => {
+    let levelA = Number(a.level_id)
+    let levelB = Number(b.level_id)
+    return levelB - levelA
+  })
+}
+
+function sortingLowThreat (items) {
   items.sort((a, b) => {
     let levelA = Number(a.level_id)
     let levelB = Number(b.level_id)
@@ -80,8 +89,10 @@ const mapStateToProps = state => {
     sortingAZ(state.fish)
   } else if (state.sort.sortOrder == 'ZA') {
     sortingZA(state.fish)
-  } else if (state.sort.sortOrder == 'THREAT') {
-    sortingThreat(state.fish)
+  } else if (state.sort.sortOrder == 'HIGHTHREAT') {
+    sortingHighThreat(state.fish)
+  } else if (state.sort.sortOrder == 'LOWTHREAT') {
+    sortingLowThreat(state.fish)
   }
   return {
     fish: state.fish,
@@ -95,7 +106,8 @@ const mapDispatchToProps = dispatch => {
     getFish: () => dispatch(getFish()),
     orderAZ: (x) => dispatch(orderAZ(x)),
     orderZA: (x) => dispatch(orderZA(x)),
-    orderThreat: (x) => dispatch(orderThreat(x))
+    orderHighThreat: (x) => dispatch(orderHighThreat(x)),
+    orderLowThreat: (x) => dispatch(orderLowThreat(x))
   }
 }
 

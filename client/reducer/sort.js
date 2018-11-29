@@ -12,10 +12,10 @@ export default function sortReducer (state = {}, action) {
         sortOrder: 'ZA'
       }
 
-    case 'SORT_THREAT':
+    case 'SORT_HIGH_THREAT':
       return {
         ...state,
-        sortOrder: 'Best'
+        sortOrder: 'HIGHTHREAT'
       }
 
     default:
