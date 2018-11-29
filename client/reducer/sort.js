@@ -12,18 +12,6 @@ export default function sortReducer (state = {}, action) {
         sortOrder: 'ZA'
       }
 
-    case 'SORT_BEST':
-      return {
-        ...state,
-        sortOrder: 'Best'
-      }
-
-    case 'SORT_WORST':
-      return {
-        ...state,
-        sortOrder: 'Worst'
-      }
-
     default:
       return {
         ...state,
