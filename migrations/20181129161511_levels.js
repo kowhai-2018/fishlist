@@ -1,7 +1,7 @@
 exports.up = knex =>
   knex.schema.createTable('levels', t => {
     t.increments('id').primary()
-    t.integer('level_id').references('level.id')
+    t.integer('level_id').references('levels.id')
     t.string('level')
     t.timestamps(true, true)
   })
