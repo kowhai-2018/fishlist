@@ -34,6 +34,13 @@ export function orderZA (sortOrder) {
   }
 }
 
+export function orderThreat (sortOrder) {
+  return {
+    type: 'SORT_THREAT',
+    sortOrder
+  }
+}
+
 export function getFish () {
   return dispatch => {
     dispatch(getFishPending())

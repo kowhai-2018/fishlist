@@ -1,9 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {getFish, orderAZ, orderZA} from '../actions'
+import {getFish, orderAZ, orderZA, orderThreat} from '../actions'
 import Fish from './Fish'
-import { Dropdown, Menu } from 'semantic-ui-react'
+import {Dropdown, Menu} from 'semantic-ui-react'
 
 class FishList extends React.Component {
   componentDidMount () {
@@ -23,7 +23,7 @@ class FishList extends React.Component {
               <Dropdown.Menu>
                 <Dropdown.Item onClick={() => this.props.orderAZ('AZ')}>A-Z</Dropdown.Item>
                 <Dropdown.Item onClick={() => this.props.orderZA('ZA')}>Z-A</Dropdown.Item>
-                <Dropdown.Item>Threat Level</Dropdown.Item>
+                <Dropdown.Item onClick={() => this.props.orderThreat('THREAT')}>Threat Level</Dropdown.Item>
                 <Dropdown.Item>Method</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
@@ -67,13 +67,22 @@ function sortingZA (items) {
   })
 }
 
+function sortingThreat (items) {
+  items.sort((a, b) => {
+    let levelA = Number(a.level_id)
+    let levelB = Number(b.level_id)
+    return levelA - levelB
+  })
+}
+
 const mapStateToProps = state => {
   if (state.sort.sortOrder == 'AZ') {
     sortingAZ(state.fish)
- 
   } else if (state.sort.sortOrder == 'ZA') {
     sortingZA(state.fish)
-  } 
+  } else if (state.sort.sortOrder == 'THREAT') {
+    sortingThreat(state.fish)
+  }
   return {
     fish: state.fish,
     info: state.info,
@@ -85,7 +94,8 @@ const mapDispatchToProps = dispatch => {
   return {
     getFish: () => dispatch(getFish()),
     orderAZ: (x) => dispatch(orderAZ(x)),
-    orderZA: (x) => dispatch(orderZA(x))
+    orderZA: (x) => dispatch(orderZA(x)),
+    orderThreat: (x) => dispatch(orderThreat(x))
   }
 }
 
