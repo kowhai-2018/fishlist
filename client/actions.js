@@ -20,7 +20,8 @@ export function getFishError (message) {
   }
 }
 
-export function OrderAZ (sortOrder) {
+export function orderAZ (sortOrder) {
+  console.log('orderAZ called')
   return {
     type: 'SORT_AZ',
     sortOrder
