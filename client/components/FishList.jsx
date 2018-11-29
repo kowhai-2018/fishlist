@@ -9,10 +9,6 @@ class FishList extends React.Component {
     this.props.getFish()
   }
 
-  test () {
-    console.log('value has been selected')
-  }
-
   render () {
     if (this.props.info.pending) {
       return <div>LOADING...</div>
@@ -56,7 +52,6 @@ const mapStateToProps = state => {
       sortOrder: state.sort.sortOrder
     }
   } else {
-    console.log(state.sort.sortOrder)
     return {
       fish: state.fish,
       info: state.info
