@@ -20,6 +20,13 @@ export function getFishError (message) {
   }
 }
 
+export function OrderAZ (sortOrder) {
+  return {
+    type: 'SORT_AZ',
+    sortOrder
+  }
+}
+
 export function getFish () {
   return dispatch => {
     dispatch(getFishPending())
