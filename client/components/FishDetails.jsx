@@ -1,12 +1,59 @@
 import React from 'react'
+import {Container, Grid, Icon, Image, Header, Divider, Button, Placeholder} from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
+
+const style = {
+  h1: {
+    marginTop: '3em'
+  },
+  h2: {
+    margin: '4em 0em 2em'
+  },
+  h3: {
+    marginTop: '2em',
+    padding: '2em 0em'
+  },
+  last: {
+    marginBottom: '300px'
+  }
+}
 
 export default function FishDetails () {
   return (
     <div>
-      <button>Back</button> Paua <img src='https://placekitten.com/200/300'></img>
-      <p>Lorem</p>
-      <a href='google.com/paua'>More info</a>
-      <h3>Media Box & large Img</h3>
+      <Container>
+        <Grid columns={3} doubling stackable>
+          <Grid.Column>
+            <Link to='/'><Icon color='green' name='arrow circle left' size='huge' /></Link>
+          </Grid.Column>
+          <Grid.Column>
+            <Header size='huge' textAlign='center'>Paua</Header> {/* This is where the props for the fish name will go */}
+          </Grid.Column>
+          <Grid.Column>
+            <Image circular align='right' size='tiny' src='https://placekitten.com/200/200'></Image> {/* This is where the props for the image will go */}
+          </Grid.Column>
+        </Grid>
+      </Container>
+      <Divider hidden />
+      <Container>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus quaerat autem porro, iusto dolorem perferendis laudantium assumenda, necessitatibus recusandae quis in ipsam fugit aspernatur delectus ducimus. Fugiat voluptatem corrupti est?</p> {/* This is where the props for the description will go */}
+        <a href='https://en.wikipedia.org/wiki/P%C4%81ua'><Button basic color='blue' content='More info' icon='info circle' labelPosition='left'/></a> {/* This is where the props for the 'more info' link will go */}
+      </Container>
+      <Divider />
+      <Container>
+        <Grid columns={2} doubling stackable>
+          <Grid.Column align='left'>
+            <Placeholder style={{height: 300, width: 480}}>
+              <Placeholder.Image /> {/* This is where the props for the video will go */}
+            </Placeholder>
+          </Grid.Column>
+          <Grid.Column align='right'>
+            <Placeholder style={{height: 300, width: 480}} >
+              <Placeholder.Image /> {/* This is where the props for the image will go */}
+            </Placeholder>
+          </Grid.Column>
+        </Grid>
+      </Container>
     </div>
   )
 }
