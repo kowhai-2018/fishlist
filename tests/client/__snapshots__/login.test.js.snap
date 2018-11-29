@@ -18,3 +18,22 @@ Object {
   "type": "LOGIN_SUCCESS",
 }
 `;
+
+exports[`registerFailure matches the last snapshot 1`] = `
+Object {
+  "message": "Username taken",
+  "type": "REGISTER_FAILURE",
+}
+`;
+
+exports[`registerPending matches the last snapshot 1`] = `
+Object {
+  "type": "REGISTER_PENDING",
+}
+`;
+
+exports[`registerSuccess matches the last snapshot 1`] = `
+Object {
+  "type": "REGISTER_SUCCESS",
+}
+`;

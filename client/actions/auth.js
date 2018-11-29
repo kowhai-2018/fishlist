@@ -18,5 +18,24 @@ export const login = (username, password) => dispatch => {
       setToken(res.body.token)
       dispatch(loginSuccess())
     })
-    .catch(err => dispatch(loginFailure(err.message)))
+    .catch(err => dispatch(loginFailure(err.response.body.error)))
+}
+
+export const registerPending = () => ({ type: 'REGISTER_PENDING' })
+
+export const registerSuccess = () => ({ type: 'REGISTER_SUCCESS' })
+
+export const registerFailure = message => ({ type: 'REGISTER_FAILURE', message })
+
+export const register = (username, password, email) => dispatch => {
+  dispatch(registerPending())
+
+  return request
+    .post('/api/v1/auth/register')
+    .send({ username, password, email })
+    .then(res => {
+      setToken(res.body.token)
+      dispatch(registerSuccess())
+    })
+    .catch(err => dispatch(registerFailure(err.response.body.error)))
 }
