@@ -27,7 +27,13 @@ router.post('/new', (req, res) => {
     links: req.body.links,
     video: req.body.video
   }
-  db.createFish(newFish, fishDetail)
+  const fishLevel = {
+    level: req.body.level
+  }
+  const fishMethod = {
+    method: req.body.method
+  }
+  db.createFish(newFish, fishDetail, fishLevel, fishMethod)
     .then(() => {
       res.redirect('/')
     })
