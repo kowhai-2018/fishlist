@@ -10,13 +10,13 @@ class FishList extends React.Component {
   }
 
   sortingBy(items) {
-    items.sort(function (a,b) {
+    items.sort((a,b) => {
       let nameA = a.name.toUpperCase()
       let nameB = b.name.toUpperCase()
       if (nameA < nameB) {
         return -1
       }
-      if (nameA > nameB){
+      if (nameA > nameB) {
         return 1
       }
       return 0
