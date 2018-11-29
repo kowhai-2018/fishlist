@@ -2,7 +2,7 @@
 
 exports[`loginFailure matches the last snapshot 1`] = `
 Object {
-  "message": "badness happened",
+  "error": "badness happened",
   "type": "LOGIN_FAILURE",
 }
 `;
@@ -21,7 +21,7 @@ Object {
 
 exports[`registerFailure matches the last snapshot 1`] = `
 Object {
-  "message": "Username taken",
+  "error": "Username taken",
   "type": "REGISTER_FAILURE",
 }
 `;

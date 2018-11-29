@@ -1,6 +1,9 @@
 import nock from 'nock'
 
 import * as auth from '../../client/actions/auth'
+import reducer from '../../client/reducer/auth'
+
+let state = null
 
 beforeAll(() => {
   nock(/.*/)
@@ -17,6 +20,15 @@ beforeAll(() => {
 
 afterAll(() => {
   nock.cleanAll()
+})
+
+beforeEach(() => {
+  state = {
+    error: null,
+    loggedIn: false,
+    newRegistration: false,
+    pending: false
+  }
 })
 
 test('loginPending matches the last snapshot', () => {
@@ -49,7 +61,7 @@ test('login dispatches SUCCESS', () => {
 
 test('login dispatches FAILURE on error', () => {
   expect.assertions(1)
-  const expected = { type: 'LOGIN_FAILURE', message: 'No password provided.' }
+  const expected = { type: 'LOGIN_FAILURE', error: 'No password provided.' }
   const dispatch = jest.fn()
   return auth.login('floof')(dispatch)
     .then(() => expect(dispatch).toHaveBeenCalledWith(expected))
@@ -87,10 +99,76 @@ test('register dispatches PENDING', () => {
     .then(() => expect(dispatch).toHaveBeenCalledWith(expected))
 })
 
+test('register dispatches SUCCESS', () => {
+  expect.assertions(1)
+  const expected = { type: 'REGISTER_SUCCESS' }
+  const dispatch = jest.fn()
+  return auth.register('foo', 'bar', 'bar@foo')(dispatch)
+    .then(() => expect(dispatch).toHaveBeenCalledWith(expected))
+})
+
 test('register dispatches FAILURE on error', () => {
   expect.assertions(1)
-  const expected = { type: 'REGISTER_FAILURE', message: 'No email provided.' }
+  const expected = { type: 'REGISTER_FAILURE', error: 'No email provided.' }
   const dispatch = jest.fn()
   return auth.register('floof', 'florf')(dispatch)
     .then(() => expect(dispatch).toHaveBeenCalledWith(expected))
+})
+
+test('reducer sets loggedIn true on LOGIN_SUCCESS', () => {
+  const expected = {
+    loggedIn: true,
+    pending: false
+  }
+  const actual = reducer(state, auth.loginSuccess())
+  expect(actual).toMatchObject(expected)
+})
+
+test('reducer sets pending true on LOGIN_PENDING', () => {
+  const expected = {
+    loggedIn: false,
+    pending: true
+  }
+  const actual = reducer(state, auth.loginPending())
+  expect(actual).toMatchObject(expected)
+})
+
+test('reducer sets error on LOGIN_FAILURE', () => {
+  const expected = {
+    error: 'Password incorrect.',
+    loggedIn: false,
+    pending: false
+  }
+  const actual = reducer(state, auth.loginFailure('Password incorrect.'))
+  expect(actual).toMatchObject(expected)
+})
+
+test('reducer sets pending true on REGISTER_PENDING', () => {
+  const expected = {
+    loggedIn: false,
+    pending: true
+  }
+  const actual = reducer(state, auth.registerPending())
+  expect(actual).toMatchObject(expected)
+})
+
+test('reducer sets error on REGISTER_FAILURE', () => {
+  const expected = {
+    error: 'Email not provided.',
+    loggedIn: false,
+    pending: false
+  }
+  const actual = reducer(state, auth.loginFailure('Email not provided.'))
+  expect(actual).toMatchObject(expected)
+})
+
+test('reducer sets state correctly on REGISTER_SUCCESS', () => {
+  const expected = {
+    error: null,
+    loggedIn: true,
+    newRegistration: true,
+    pending: false
+  }
+  const actual = reducer(state, auth.registerSuccess())
+  expect(actual).toMatchObject(expected)
 })

@@ -6,7 +6,7 @@ export const loginPending = () => ({ type: 'LOGIN_PENDING' })
 
 export const loginSuccess = () => ({ type: 'LOGIN_SUCCESS' })
 
-export const loginFailure = message => ({ type: 'LOGIN_FAILURE', message })
+export const loginFailure = error => ({ type: 'LOGIN_FAILURE', error })
 
 export const login = (username, password) => dispatch => {
   dispatch(loginPending())
@@ -25,7 +25,7 @@ export const registerPending = () => ({ type: 'REGISTER_PENDING' })
 
 export const registerSuccess = () => ({ type: 'REGISTER_SUCCESS' })
 
-export const registerFailure = message => ({ type: 'REGISTER_FAILURE', message })
+export const registerFailure = error => ({ type: 'REGISTER_FAILURE', error })
 
 export const register = (username, password, email) => dispatch => {
   dispatch(registerPending())
