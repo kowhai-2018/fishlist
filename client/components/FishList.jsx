@@ -5,23 +5,44 @@ import { getFish } from '../actions'
 import Fish from './Fish'
 
 class FishList extends React.Component {
+  state = {
+    ...this.state,
+    sorting: ""
+  }
+
+  change() {
+    this.setState({
+      ...this.state,
+      sorting: event.target.value
+    })
+  }
+
   componentDidMount () {
     this.props.getFish()
   }
 
-  sortingBy(items) {
-    items.sort((a,b) => {
-      let nameA = a.name.toUpperCase()
-      let nameB = b.name.toUpperCase()
-      if (nameA < nameB) {
-        return -1
-      }
-      if (nameA > nameB) {
-        return 1
-      }
-      return 0
-    })
-    return items
+  test() {
+    console.log("value has been selected")
+  }
+
+  sortingBy(sortValue, items) {
+    switch (sortValue) {
+      case "A>Z":
+        items.sort((a,b) => {
+          let nameA = a.name.toUpperCase()
+          let nameB = b.name.toUpperCase()
+          if (nameA < nameB) {
+            return -1
+          }
+          if (nameA > nameB) {
+            return 1
+          }
+          return 0
+        })
+      default: 
+      return items
+    }
+
   }
 
   render () {
@@ -31,9 +52,17 @@ class FishList extends React.Component {
 
     return (
       <React.Fragment>
+        <div>
+        <select onChange={() => this.change()} value={this.state.sorting}>
+          <option value="A>Z">A-Z</option>
+          <option value="Z>A">Z-A</option>
+          <option value="Best>Worst">Best > Worst</option>
+          <option value="Worst>Best">Worst > Best</option>
+        </select>
+        </div>
         {this.props.info.error && <div>{this.props.info.error}</div>}
         <ul>
-          {this.sortingBy(this.props.fish).map(fish =>
+          {this.props.fish.map(fish =>
             <Fish key={fish.id} fishData={fish} />)}
         </ul>
       </React.Fragment>
