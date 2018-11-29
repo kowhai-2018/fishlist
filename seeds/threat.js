@@ -2,16 +2,16 @@ exports.seed = knex =>
   knex('threat').del()
     .then(() =>
       knex('threat').insert([
-        { name: 'paua', threat: 'Great to eat'},
-        { name: 'cockle', threat: 'Good to eat' },
-        { name: 'kingfish', threat: 'OK to eat', 'Don\'t eat' },
-        { name: 'kahawai', threat: 'OK to eat' },
-        { name: 'grey mullet', threat: 'Eat less of' },
-        { name: 'butterfish', threat: 'Eat less of' },
-        { name: 'striped marlin', threat: 'Don\'t eat' },
-        { name: 'tarakihi', threat: 'Eat less of' },
-        { name: 'whitebait', threat: 'Don\'t eat' },
-        { name: 'blue cod', threat: 'OK to eat', 'Don\'t eat' },
-        { name: 'elephantfish', threat: 'Don\'t eat' },
-        { name: 'red snapper', threat: 'Don\'t eat'}
+        { name: 'paua', threat: '1' },
+        { name: 'cockle', threat: '2' },
+        { name: 'kingfish', threat: '3', threat2: '5' },
+        { name: 'kahawai', threat: '3' },
+        { name: 'grey mullet', threat: '4' },
+        { name: 'butterfish', threat: '4' },
+        { name: 'striped marlin', threat: '5' },
+        { name: 'tarakihi', threat: '4' },
+        { name: 'whitebait', threat: '5' },
+        { name: 'blue cod', threat: '3', threat2: '5' },
+        { name: 'elephantfish', threat: '5' },
+        { name: 'red snapper', threat: '5' }
       ]))
