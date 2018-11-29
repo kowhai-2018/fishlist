@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loginFailure matches the last snapshot 1`] = `
+Object {
+  "message": "badness happened",
+  "type": "LOGIN_FAILURE",
+}
+`;
+
+exports[`loginPending matches the last snapshot 1`] = `
+Object {
+  "type": "LOGIN_PENDING",
+}
+`;
+
+exports[`loginSuccess matches the last snapshot 1`] = `
+Object {
+  "type": "LOGIN_SUCCESS",
+}
+`;
