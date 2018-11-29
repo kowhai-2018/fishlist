@@ -1,6 +1,8 @@
+import { getToken } from '../utils/tokens'
+
 const defaultState = {
   error: null,
-  loggedIn: false,
+  loggedIn: getToken(),
   newRegistration: false,
   pending: false
 }
