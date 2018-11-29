@@ -3,9 +3,13 @@ import { Form } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 export default class AddNew extends Component {
-  state = {}
+  state = {
+    username: '',
+    threat: ''
+  }
 
-  handleChange = (e, { value }) => this.setState({ value })
+  handleChange = e => this.setState
+  ({ [ e.target.name ]: e.target.value })
 
   render() {
     const { value } = this.state
@@ -13,7 +17,7 @@ export default class AddNew extends Component {
       <Form>
         <Form.Group widths='equal'>
           <Form.Input fluid label='Name' placeholder='Name' />
-          <Form.Input fluid label='Threat' placeholder='Threat' />
+          <Form.Input fluid label='Threat' placeholder='Threat' onChange={this.handleChange} value={this.state.threat} />
           <Form.Input fluid label='Method' placeholder='Method' />
         </Form.Group>
         <Form.TextArea label='Description' placeholder='Description' />
