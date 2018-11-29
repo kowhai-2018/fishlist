@@ -11,7 +11,7 @@ const FishDetails = ({match}) => {
       <Container>
         <Grid columns={3} doubling stackable>
           <Grid.Column>
-            <Link to='/'><Icon color='green' name='arrow circle left' size='huge' /></Link>
+            <Icon onClick={() => history.back()} color='green' name='arrow circle left' size='huge' />
           </Grid.Column>
           <Grid.Column>
             <Header size='huge' textAlign='center'>{name}</Header> {/* This is where the props for the fish name will go */}
