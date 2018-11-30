@@ -14,13 +14,14 @@ function checkUser (req, res, next) {
   const { username, password } = req.body
 
   users.getByUsername(username)
-    .then(u => {
-      if (!u) {
+    .then(user => {
+      if (!user) {
         return next(new Error('Unknown user.'))
       }
 
-      res.locals.userId = u.id
-      return hashing.verify(u.hash, password)
+      const { hash, ...userWithoutHash } = user
+      res.locals.user = userWithoutHash
+      return hashing.verify(hash, password)
     })
     .then(verified => {
       if (!verified) {
@@ -34,8 +35,9 @@ function checkUser (req, res, next) {
 
 function createUser (req, res, next) {
   users.create(req.body)
-    .then(([ id ]) => {
-      res.locals.userId = id
+    .then(user => {
+      const { hash, ...userWithoutHash } = user
+      res.locals.user = userWithoutHash
       next()
     })
     .catch(err => {
@@ -57,9 +59,9 @@ function errorHandler (err, req, res, next) {
 }
 
 function issueToken (req, res, next) {
-  const { userId } = res.locals
+  const { id } = res.locals.user
 
-  const token = tokens.create(userId)
+  const token = tokens.create(id)
   res.status(200).json({ ok: true, token })
 }
 

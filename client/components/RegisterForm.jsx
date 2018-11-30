@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Container, Form, Input, Button } from 'semantic-ui-react'
+import { Container, Form, Message, Input, Button } from 'semantic-ui-react'
 import { Redirect } from 'react-router-dom'
 
 import { register, registerFailure } from '../actions/auth'
 
-class LoginForm extends React.Component {
+export class RegisterForm extends React.Component {
   state = {
     username: '',
     password: '',
@@ -26,6 +26,10 @@ class LoginForm extends React.Component {
       return registerFailure('Must provide password.')
     }
 
+    if (!email) {
+      return registerFailure('Must provide email.')
+    }
+
     register(username, password, email)
     this.setState({ username: '', password: '', email: '' })
   }
@@ -41,7 +45,11 @@ class LoginForm extends React.Component {
     }
 
     return (
-      <Form>
+      <Form error={!!error} loading={pending}>
+        <Message
+          error
+          header='Uh-oh'
+          content={error} />
         <Form.Field widths='equal'>
           <label>Username:</label>
           <Input
@@ -87,4 +95,4 @@ const mapDispatchToProps = dispatch => ({
   registerFailure: error => dispatch(registerFailure(error))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm)

@@ -17,5 +17,4 @@ router.get('/:id', (req, res) => {
     .then(fishDetail => res.status(200).json(fishDetail))
 })
 
-
 module.exports = router

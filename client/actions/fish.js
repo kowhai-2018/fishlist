@@ -13,6 +13,13 @@ export function getFishSuccess (fish) {
   }
 }
 
+export function getFishDetailSuccess (fishDetail) {
+  return {
+    type: 'GET_FISH_DETAIL_SUCCESS',
+    fishDetail
+  }
+}
+
 export function getFishError (message) {
   return {
     type: 'GET_FISH_ERROR',
@@ -41,6 +48,17 @@ export function getFish () {
     request
       .get('/api/v1/fish')
       .then(res => dispatch(getFishSuccess(res.body)))
+      .catch(err => dispatch(getFishError(err.message)))
+  }
+}
+
+export function getFishDetail (fishId) {
+  return dispatch => {
+    dispatch(getFishPending())
+
+    request
+      .get(`/api/v1/fish/${fishId}`)
+      .then(res => dispatch(getFishDetailSuccess(res.body)))
       .catch(err => dispatch(getFishError(err.message)))
   }
 }
