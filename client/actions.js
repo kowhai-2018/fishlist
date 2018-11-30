@@ -30,3 +30,10 @@ export function getFish () {
       .catch(err => dispatch(getFishError(err.message)))
   }
 }
+
+export function searchFish (searchedFish) {
+  return {
+    type: 'SEARCH_FISH',
+    searchedFish
+  }
+}
