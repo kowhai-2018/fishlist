@@ -1,3 +1,4 @@
+const cors = require('cors')
 const path = require('path')
 const express = require('express')
 
@@ -6,6 +7,7 @@ const fish = require('./routes/fish')
 
 const server = express()
 
+server.use(cors())
 server.use(express.json())
 server.use('/api/v1/auth', auth)
 server.use('/api/v1/fish', fish)

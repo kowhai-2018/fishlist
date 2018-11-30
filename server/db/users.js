@@ -4,7 +4,7 @@ const hashing = require('../auth/hashing')
 function create (user, db = connection) {
   return hashing.generate(user.password)
     .then(hash => {
-      const { username, email } = user
+      const {username, email} = user
       return db('users').insert({
         username,
         email,

@@ -2,7 +2,7 @@ import React from 'react'
 import {Input} from 'semantic-ui-react'
 import {connect} from 'react-redux'
 
-import {searchFish} from '../actions'
+import {searchFish} from '../actions/fish'
 
 class Search extends React.Component {
   render () {
