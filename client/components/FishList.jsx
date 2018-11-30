@@ -1,9 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { Dropdown, Menu } from 'semantic-ui-react'
+import {Dropdown, Menu} from 'semantic-ui-react'
 
-import { getFish, orderAZ, orderZA } from '../actions/fish'
+import {getFish, orderAZ, orderZA} from '../actions/fish'
 import Fish from './Fish'
+import Search from './Search'
 
 class FishList extends React.Component {
   componentDidMount () {
@@ -14,6 +15,7 @@ class FishList extends React.Component {
     if (this.props.info.pending) {
       return <div>LOADING...</div>
     }
+    const fishes = this.props.fish.filter(fish => fish.name.toLowerCase().includes(this.props.search.toLowerCase()))
 
     return (
       <React.Fragment>
@@ -30,8 +32,9 @@ class FishList extends React.Component {
           </Menu>
         </div>
         {this.props.info.error && <div>{this.props.info.error}</div>}
+        <Search />
         <ul>
-          {this.props.fish.map(fish =>
+          {this.props.fish && fishes.map(fish =>
             <Fish key={fish.id} fishData={fish} />)}
         </ul>
       </React.Fragment>
@@ -75,6 +78,7 @@ const mapStateToProps = state => {
   }
   return {
     fish: state.fish,
+    search: state.search,
     info: state.info,
     sortOrder: state.sort.sortOrder
   }

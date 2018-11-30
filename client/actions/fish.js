@@ -62,3 +62,10 @@ export function getFishDetail (fishId) {
       .catch(err => dispatch(getFishError(err.message)))
   }
 }
+
+export function searchFish (searchedFish) {
+  return {
+    type: 'SEARCH_FISH',
+    searchedFish
+  }
+}
