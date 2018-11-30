@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Menu, Input, Button } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 import LogoutButton from './LogoutButton'
 import { login, loginFailure } from '../actions/auth'
@@ -63,7 +64,7 @@ class LoginForm extends React.Component {
             disabled={pending}
             onClick={this.login}>Log in</Button>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item as={Link} to='/register'>
           <Button>Register</Button>
         </Menu.Item>
       </React.Fragment>
