@@ -4,6 +4,7 @@ exports.up = knex =>
     t.string('name')
     t.integer('level_id').references('levels.id')
     t.integer('method_id').references('methods.id')
+    t.integer('level_id').references('levels.id')
     t.timestamps(true, true)
   })
 

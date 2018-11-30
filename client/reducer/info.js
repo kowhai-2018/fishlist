@@ -13,6 +13,13 @@ export default function infoReducer (state = {}, action) {
         error: null
       }
 
+    case 'GET_FISH_DETAIL_SUCCESS':
+      return {
+        ...state,
+        pending: false,
+        error: null
+      }
+
     case 'GET_FISH_ERROR':
       return {
         ...state,
