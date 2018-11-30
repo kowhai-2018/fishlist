@@ -13,7 +13,7 @@ class LogoutButton extends React.Component {
 
   render () {
     return (
-      <Menu.Item>
+      <Menu.Item position='right'>
         <Button onClick={this.logout}>Logout</Button>
       </Menu.Item>
     )
