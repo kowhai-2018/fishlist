@@ -5,6 +5,7 @@ function getFishDetail (fishId, db = connection) {
     .where('fish_id', fishId)
     .join('fish', 'fish.id', '=', 'fish_details.fish_id')
     .select('name', 'description', 'link', 'image', 'video')
+    .first()
 }
 
 module.exports = {

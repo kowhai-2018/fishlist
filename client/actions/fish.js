@@ -15,7 +15,7 @@ export function getFishSuccess (fish) {
 
 export function getFishDetailSuccess (fishDetail) {
   return {
-    type: 'GET_FISH_DETAIL',
+    type: 'GET_FISH_DETAIL_SUCCESS',
     fishDetail
   }
 }

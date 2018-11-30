@@ -13,7 +13,7 @@ export default function infoReducer (state = {}, action) {
         error: null
       }
 
-    case 'GET_FISH_DETAIL':
+    case 'GET_FISH_DETAIL_SUCCESS':
       return {
         ...state,
         pending: false,
