@@ -9,21 +9,12 @@ class FishList extends React.Component {
     this.props.getFish()
   }
 
-  // filterList (event) {
-  //   var updatedFish = this.state.originalFish
-  //   updatedFish = updatedFish.filter(function (item) {
-  //     return item.toLowerCase().search(
-  //       event.target.value.toLowerCase()) !== -1
-  //   })
-  //   this.setState({filteredFish: updatedFish})
-  // }
-
   render () {
     if (this.props.info.pending) {
       return <div>LOADING...</div>
     }
     const fishes = this.props.fish.filter(fish => fish.name.toLowerCase().includes(this.props.search.toLowerCase()))
-    // const filteredFish =
+
     return (
       <React.Fragment>
         {this.props.info.error && <div>{this.props.info.error}</div>}
