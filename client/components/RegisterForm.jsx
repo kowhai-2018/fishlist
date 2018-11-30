@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom'
 
 import { register, registerFailure } from '../actions/auth'
 
-class RegisterForm extends React.Component {
+export class RegisterForm extends React.Component {
   state = {
     username: '',
     password: '',
