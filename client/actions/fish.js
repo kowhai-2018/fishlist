@@ -41,6 +41,20 @@ export function orderZA (sortOrder) {
   }
 }
 
+export function orderHighThreat (sortOrder) {
+  return {
+    type: 'SORT_HIGH_THREAT',
+    sortOrder
+  }
+}
+
+export function orderLowThreat (sortOrder) {
+  return {
+    type: 'SORT_LOW_THREAT',
+    sortOrder
+  }
+}
+
 export function getFish () {
   return dispatch => {
     dispatch(getFishPending())
