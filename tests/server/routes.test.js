@@ -11,3 +11,13 @@ test('/', (done) => {
       done()
     })
 })
+
+test('/:id', (done) => {
+  request(server)
+    .get('/:id')
+    .expect(200)
+    .end((err, res) => {
+      expect(err).toBeNull()
+      done()
+    })
+})
