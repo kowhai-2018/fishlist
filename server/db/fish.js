@@ -7,15 +7,14 @@ function get(db = connection) {
 function createFish(
   newFish,
   fishDetail,
-  fishLevel,
-  fishMethod,
   db = connection
 ) {
   return db('fish')
     .insert(newFish)
-    .then(db('fish_details').insert(fishDetail))
-    .then(db('levels').insert(fishLevel))
-    .then(db('methods').insert(fishMethod))
+    .then((res) => db('fish_details').insert({
+      ...fishDetail,
+      fish_id: res[0]
+    }))
 }
 
 module.exports = {
