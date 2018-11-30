@@ -22,7 +22,7 @@ test('users.create hashes the password but does not store it', () => {
     username: 'foo',
     email: 'bar@wombat.com'
   }
-  return users.create({ ...user, password: 'password' }, testDb)
+  return users.create({...user, password: 'password'}, testDb)
     .then(actual => {
       expect(actual).toMatchObject(user)
       expect(actual.password).toBe(undefined)
@@ -47,6 +47,6 @@ test('users.getById gets a user by id', () => {
     email: 'test@example.com'
   }
   return users.getByUsername('test', testDb)
-    .then(({ id }) => users.getById(id, testDb))
+    .then(({id}) => users.getById(id, testDb))
     .then((actual) => expect(actual).toMatchObject(expected))
 })
