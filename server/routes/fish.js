@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const { name, levelId, methodId, description, image, links, video } = req.body
+  const { name, levelId, methodId, description, image, link, video } = req.body
   const newFish = {
     name,
     level_id: levelId,
@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
   const fishDetail = {
     description,
     image,
-    links,
+    link,
     video
   }
 
