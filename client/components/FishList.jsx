@@ -39,7 +39,8 @@ class FishList extends React.Component {
   }
 }
 
-function sortingAZ (items) {
+export function sortingAZ (items) {
+  console.log(items)
   items.sort((a, b) => {
     let nameA = a.name.toUpperCase()
     let nameB = b.name.toUpperCase()
