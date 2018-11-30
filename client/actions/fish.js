@@ -55,6 +55,13 @@ export function orderLowThreat (sortOrder) {
   }
 }
 
+export function orderMethod (sortOrder) {
+  return {
+    type: 'SORT_METHOD',
+    sortOrder
+  }
+}
+
 export function getFish () {
   return dispatch => {
     dispatch(getFishPending())

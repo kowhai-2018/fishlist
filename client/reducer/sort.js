@@ -18,11 +18,17 @@ export default function sortReducer (state = {}, action) {
         sortOrder: 'HIGHTHREAT'
       }
 
-      case 'SORT_LOW_THREAT':
-      return {
-        ...state,
-        sortOrder: 'LOWTHREAT'
-      }
+    case 'SORT_LOW_THREAT':
+    return {
+      ...state,
+      sortOrder: 'LOWTHREAT'
+    }
+
+    case 'SORT_METHOD':
+    return {
+      ...state,
+      sortOrder: 'METHOD'
+    }
 
     default:
       return {
