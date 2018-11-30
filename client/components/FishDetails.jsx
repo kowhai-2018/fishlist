@@ -33,7 +33,7 @@ class FishDetails extends React.Component {
         <Divider hidden />
         <Container>
           <p>{this.props.fish[0].description}</p> {/* This is where the props for the description will go */}
-          <a href={this.props.fish[0].links}><Button basic color='blue' content='More info' icon='info circle' labelPosition='left'/></a>
+          <a href={this.props.fish[0].link}><Button basic color='blue' content='More info' icon='info circle' labelPosition='left'/></a>
         </Container>
         <Divider />
         <Container>
