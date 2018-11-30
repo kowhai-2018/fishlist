@@ -21,3 +21,13 @@ test('/:id', (done) => {
       done()
     })
 })
+
+test('/api/v1/auth', (done) => {
+  request(server)
+    .get('/api/v1/auth')
+    .expect(200)
+    .end((err, res) => {
+      expect(err).toBeNull()
+      done()
+    })
+})
