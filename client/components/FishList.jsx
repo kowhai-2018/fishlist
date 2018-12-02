@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { Dropdown, Menu } from 'semantic-ui-react'
+import {Dropdown, Menu} from 'semantic-ui-react'
 import {getFish, orderAZ, orderZA, orderHighThreat, orderLowThreat, orderMethod} from '../actions/fish'
 import Fish from './Fish'
 import Search from './Search'
@@ -94,9 +94,8 @@ export function sortingMethod (items) {
   })
 }
 
-
 const mapStateToProps = state => {
-  const sortedFish  = [... state.fish]
+  const sortedFish = [...state.fish]
   if (state.sort.sortOrder == 'AZ') {
     sortingAZ(sortedFish)
   } else if (state.sort.sortOrder == 'ZA') {
@@ -128,4 +127,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FishList)
-
