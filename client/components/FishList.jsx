@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-
 import {Dropdown, Menu} from 'semantic-ui-react'
+
 import {getFish, orderAZ, orderZA, orderHighThreat, orderLowThreat} from '../actions/fish'
 
 import Fish from './Fish'
