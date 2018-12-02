@@ -4,7 +4,7 @@ import {shallow} from 'enzyme'
 import App from '../../../client/components/App'
 
 test('<App />', () => {
-  const expected = ''
+  const expected = '<BrowserRouter />'
   const wrapper = shallow(<App />)
   expect(wrapper.text()).toMatch(expected)
 })
