@@ -24,5 +24,5 @@ test('GET_FISH_DETAIL_SUCCESS action type returns action.fishDetail', () => {
     fishDetail: expected
   }
   const actual = fishDetailsReducer({}, action)
-  expect(actual).toMatchObject(expected)
+  expect(actual).toBe(expected)
 })
