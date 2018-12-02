@@ -7,14 +7,36 @@ const fishDetails = require('../db/fishDetails')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  fish.get()
-    .then(fish => res.status(200).json(fish))
+  fish.get().then(fish => res.status(200).json(fish))
 })
 
 router.get('/:id', (req, res) => {
-  const fishId = (Number(req.params.id))
-  fishDetails.getFishDetail(fishId)
+  const fishId = Number(req.params.id)
+  fishDetails
+    .getFishDetail(fishId)
     .then(fishDetail => res.status(200).json(fishDetail))
+})
+
+router.post('/', (req, res) => {
+  const { name, levelId, methodId, description, image, link, video } = req.body
+  const newFish = {
+    name,
+    level_id: levelId,
+    method_id: methodId
+  }
+  const fishDetail = {
+    description,
+    image,
+    link,
+    video
+  }
+
+  fish
+    .createFish(newFish, fishDetail)
+    .then(() => {
+      res.json({ Okay: true })
+    })
+    .catch((err) => res.json({ Okay: false, error: err.message }))
 })
 
 module.exports = router
