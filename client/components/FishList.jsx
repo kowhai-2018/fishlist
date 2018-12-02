@@ -43,8 +43,7 @@ class FishList extends React.Component {
 }
 
 export function sortingAZ (items) {
-  console.log(items)
-  items.sort((a, b) => {
+  return items.sort((a, b) => {
     let nameA = a.name.toUpperCase()
     let nameB = b.name.toUpperCase()
     if (nameA < nameB) {
@@ -57,8 +56,8 @@ export function sortingAZ (items) {
   })
 }
 
-function sortingZA (items) {
-  items.sort((a, b) => {
+export function sortingZA (items) {
+  return items.sort((a, b) => {
     let nameA = a.name.toUpperCase()
     let nameB = b.name.toUpperCase()
     if (nameA > nameB) {
@@ -71,24 +70,24 @@ function sortingZA (items) {
   })
 }
 
-function sortingHighThreat (items) {
-  items.sort((a, b) => {
+export function sortingHighThreat (items) {
+  return items.sort((a, b) => {
     let levelA = Number(a.level_id)
     let levelB = Number(b.level_id)
     return levelB - levelA
   })
 }
 
-function sortingLowThreat (items) {
-  items.sort((a, b) => {
+export function sortingLowThreat (items) {
+  return items.sort((a, b) => {
     let levelA = Number(a.level_id)
     let levelB = Number(b.level_id)
     return levelA - levelB
   })
 }
 
-function sortingMethod (items) {
-  items.sort((a, b) => {
+export function sortingMethod (items) {
+  return items.sort((a, b) => {
     let methodA = Number(a.method_id)
     let methodB = Number(b.method_id)
     return methodB - methodA
@@ -129,3 +128,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FishList)
+

@@ -23,13 +23,7 @@ test('check if the orderAZ function actually sorts alphabetically', () => {
   const expected = [{name:'A'},{name:'B'},{name:'C'},{name:'D'},{name:'E'}]
   const testarray = [{name:'B'},{name:'E'},{name:'C'},{name:'A'},{name:'D'}]
   const actual = sortingAZ(testarray)
-  expect(actual).toBe(expected)
+  expect(actual).toEqual(expected)
 })
 
-test('scores perfect game', function () {
-  const testarray = [{name:'B'},{name:'E'},{name:'C'},{name:'A'},{name:'D'}]
-  const expected = [{name:'A'},{name:'B'},{name:'C'},{name:'D'},{name:'E'}]
-  const actual = sortingAZ(testarray)
-  expect(actual).toBe(expected)
-})
 
