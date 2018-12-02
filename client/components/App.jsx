@@ -3,9 +3,10 @@ import {Route, BrowserRouter as Router, Switch} from 'react-router-dom'
 import {Container} from 'semantic-ui-react'
 
 import AddNew from './AddNew'
-import FishList from './FishList'
-import TopMenu from './TopMenu'
 import FishDetails from './FishDetails'
+import FishList from './FishList'
+import Register from './RegisterForm'
+import TopMenu from './TopMenu'
 
 class App extends React.Component {
   render () {
@@ -18,6 +19,7 @@ class App extends React.Component {
               <Route exact path='/' component={FishList} />
               <Route path='/new' component={AddNew} />
               <Route path='/fish/:id' component={FishDetails} />
+              <Route path='/register' component={Register} />
             </Switch>
           </Container>
         </React.Fragment>
