@@ -11,7 +11,6 @@
     "dev": "nodemon server & webpack --watch",
     "server": "node server",
     "server:debug": "node --inspect server",
-    "server": "node server",
     "start": "webpack && node server",
     "test": "jest --watchAll"
   },
