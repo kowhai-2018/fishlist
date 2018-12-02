@@ -97,19 +97,20 @@ function sortingMethod (items) {
 
 
 const mapStateToProps = state => {
+  const sortedFish  = [... state.fish]
   if (state.sort.sortOrder == 'AZ') {
-    sortingAZ(state.fish)
+    sortingAZ(sortedFish)
   } else if (state.sort.sortOrder == 'ZA') {
-    sortingZA(state.fish)
+    sortingZA(sortedFish)
   } else if (state.sort.sortOrder == 'HIGHTHREAT') {
-    sortingHighThreat(state.fish)
+    sortingHighThreat(sortedFish)
   } else if (state.sort.sortOrder == 'LOWTHREAT') {
-    sortingLowThreat(state.fish)
+    sortingLowThreat(sortedFish)
   } else if (state.sort.sortOrder == 'METHOD') {
-    sortingMethod(state.fish)
+    sortingMethod(sortedFish)
   }
   return {
-    fish: state.fish,
+    fish: sortedFish,
     search: state.search,
     info: state.info,
     sortOrder: state.sort.sortOrder
