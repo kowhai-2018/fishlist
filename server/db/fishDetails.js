@@ -8,6 +8,24 @@ function getFishDetail (fishId, db = connection) {
     .first()
 }
 
+function getFishLevel (levelId, db = connection) {
+  return db('fish')
+    .where('level_id', levelId)
+    .join('levels', 'levels.id', '=', 'fish.level_id')
+    .select('level')
+    .first()
+}
+
+function getFishMethod (methodId, db = connection) {
+  return db('fish')
+    .where('method_id', methodId)
+    .join('methods', 'methods.id', '=', 'fish.method_id')
+    .select('method')
+    .first()
+}
+
 module.exports = {
-  getFishDetail
+  getFishDetail,
+  getFishLevel,
+  getFishMethod
 }
