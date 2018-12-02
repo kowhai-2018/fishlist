@@ -5,7 +5,7 @@ import {getFishDetail} from '../actions/fish'
 
 // import {Link} from 'react-router-dom'
 
-class FishDetails extends React.Component {
+export class FishDetails extends React.Component {
   componentDidMount () {
     this.props.getFishDetail(this.props.match.params.id)
   }
@@ -26,7 +26,7 @@ class FishDetails extends React.Component {
               <Header size='huge' textAlign='center'>{this.props.fishDetails.name}</Header> {/* This is where the props for the fish name will go */}
             </Grid.Column>
             <Grid.Column>
-              <Image circular align='right' size='small' src={this.props.fishDetails.image}></Image> {/* This is where the props for the image will go */}
+              <Image circular align='right' size='small' src={this.props.fishDetails.image}></Image>
             </Grid.Column>
           </Grid>
         </Container>
