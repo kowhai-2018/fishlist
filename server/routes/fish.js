@@ -17,6 +17,12 @@ router.get('/:id', (req, res) => {
     .then(fishDetail => res.status(200).json(fishDetail))
 })
 
+router.put('/api/v1/fish/:id', (req, res) => {
+  const fishId = Number(req.params.id)
+  fish.where('fishId', fishId)
+    .update(fishDetails => res.status(200).json(fishDetails))
+})
+
 router.post('/', (req, res) => {
   const { name, levelId, methodId, description, image, link, video } = req.body
   const newFish = {
