@@ -1,11 +1,9 @@
 import React from 'react'
 import ShallowRenderer from 'react-test-renderer/shallow'
-import {configure, mount, shallow} from 'enzyme'
+import {configure, shallow} from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
-import { App } from '../../../client/components/App'
-import TopMenu from '../../../client/components/TopMenu'
-import FishList from '../../../client/components/FishList'
+import {App} from '../../../client/components/App'
 
 configure({adapter: new Adapter()})
 
@@ -20,4 +18,3 @@ test('<App /> matches the last snapshot', () => {
   const actual = renderer.render(<App />)
   expect(actual).toMatchSnapshot()
 })
-
