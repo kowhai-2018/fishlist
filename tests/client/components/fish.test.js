@@ -12,6 +12,6 @@ test('Fish function should contain fishID and name', () => {
     }
   }
   const wrapper = shallow(<Fish {...props}/>)
-  expect(wrapper.containsMatchingElement(expected))
-    .toBeTruthy()
+  const links = wrapper.find({ to: '/fish/4' })
+  expect(links.length).toBe(1)
 })
