@@ -17,5 +17,3 @@ export default function Fish (props) {
 
   )
 }
-
-export default Fish

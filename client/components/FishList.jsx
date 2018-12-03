@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import { Dropdown, Menu, List, Popup } from 'semantic-ui-react'
+import { Dropdown, Menu, List } from 'semantic-ui-react'
 import {getFish, orderAZ, orderZA, orderHighThreat, orderLowThreat, orderMethod} from '../actions/fish'
 import Fish from './Fish'
 import Search from './Search'
@@ -35,11 +35,7 @@ class FishList extends React.Component {
         <Search />
         <List divided selection>
           {this.props.fish && fishes.map(fish =>
-            <Popup key={fish.name} 
-              trigger={<Fish key={fish.id} fishData={fish} />} 
-              header={fish.image} 
-              content={fish.description} >
-            </Popup>
+            <Fish key={fish.id} fishData={fish} />
           )}
         </List>
       </React.Fragment>
