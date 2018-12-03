@@ -1,4 +1,5 @@
 const connection = require('./')
+const fish = require('./fish')
 
 function getFishDetail (fishId, db = connection) {
   return db('fish_details')
@@ -9,9 +10,12 @@ function getFishDetail (fishId, db = connection) {
 }
 
 function deleteFishDetail (fishId, db = connection) {
-  return db('fish_details')
+  db('fish_details')
     .where('fish_details.fish_id', fishID)
     .dell()
+    .then((fishId) => {
+      fish.deleteFish(fishID)
+    })
 }
 
 module.exports = {
