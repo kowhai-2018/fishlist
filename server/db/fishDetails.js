@@ -1,14 +1,14 @@
 const connection = require('./')
 
-function getFishDetail (fishId, db = connection) {
+function getFishDetail(fishId, db = connection) {
   return db('fish_details')
     .where('fish_id', fishId)
     .join('fish', 'fish.id', '=', 'fish_details.fish_id')
-    .select('name', 'description', 'link', 'image', 'video')
+    .select('name', 'level_id', 'method_id', 'description', 'link', 'image', 'video')
     .first()
 }
 
-function getFishLevel (levelId, db = connection) {
+function getFishLevel(levelId, db = connection) {
   return db('fish')
     .where('level_id', levelId)
     .join('levels', 'levels.id', '=', 'fish.level_id')
@@ -16,7 +16,7 @@ function getFishLevel (levelId, db = connection) {
     .first()
 }
 
-function getFishMethod (methodId, db = connection) {
+function getFishMethod(methodId, db = connection) {
   return db('fish')
     .where('method_id', methodId)
     .join('methods', 'methods.id', '=', 'fish.method_id')
@@ -24,8 +24,19 @@ function getFishMethod (methodId, db = connection) {
     .first()
 }
 
+function getAllDetail(fishId, db = connection) {
+  return db('fish_details')
+    .where('fish_id', fishId)
+    .join('fish', 'fish.id', '=', 'fish_details.fish_id')
+    .join('methods', 'methods.id', '=', 'fish.method_id')
+    .join('levels', 'levels.id', '=', 'fish.level_id')
+    .select('name', 'level', 'method', 'description', 'link', 'image', 'video')
+    .first()
+}
+
 module.exports = {
   getFishDetail,
   getFishLevel,
-  getFishMethod
+  getFishMethod,
+  getAllDetail
 }
