@@ -19,7 +19,26 @@ function createFish (
     }))
 }
 
+function deleteFish (
+  fishID,
+  fishDetail,
+  db = connection
+) {
+  db('fish_details')
+    .where('fish_details.fish_id', fishID)
+    .dell()
+    .then(()=> {
+      db('fish')
+        .where('id', fish_id)
+        .dell()
+        
+    })
+}
+
+
+
 module.exports = {
   get,
-  createFish
+  createFish,
+  deleteFish
 }

@@ -32,7 +32,7 @@ class FishList extends React.Component {
         </div>
         {this.props.info.error && <div>{this.props.info.error}</div>}
         <Search />
-        <ul>
+        <List divided selection>
           {this.props.fish && this.props.fish.map(fish =>
             <Fish key={fish.id} fishData={fish} />)}
         </List>
