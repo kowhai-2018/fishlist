@@ -1,4 +1,4 @@
-import infoReducer from "../../client/reducer/info"
+import infoReducer from "../../../client/reducer/info"
 
 describe('info reducer', () => {
   it('should return the initial state', () => {
