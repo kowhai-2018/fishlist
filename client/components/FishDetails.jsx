@@ -49,7 +49,7 @@ export class FishDetails extends React.Component {
             </Grid.Column>
             <Grid.Row>
               <Grid.Column align='center'>
-                <a href={this.props.fishDetails.video}><Button basic color='red' content='Delete' icon='trash alternate' labelPosition='left'/></a>
+                <a href="/api/v1/fish/delete/"{this.params.id}><Button basic color='red' content='Delete' icon='trash alternate' labelPosition='left'/></a>
               </Grid.Column>
             </Grid.Row>
           </Grid>
