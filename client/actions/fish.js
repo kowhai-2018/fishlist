@@ -20,15 +20,12 @@ export function getFishDetailSuccess (fishDetail) {
   }
 }
 
-<<<<<<< Updated upstream
-=======
 export function addNewFishSuccess (fishDetail) {
   return {
     type: 'ADD_NEW_FISH_SUCCESS',
     addNewFish
   }
 }
->>>>>>> Stashed changes
 export function getFishError (message) {
   return {
     type: 'GET_FISH_ERROR',
@@ -100,15 +97,16 @@ export function searchFish (searchedFish) {
   }
 }
 
-export function addNewFish = (name, threat, method, description) => dispatch => {
-  dispatch(getFishPending())
-
-  return request
-    .post('/api/v1/fish/')
-    .send({name, threat, method, description})
-    .then(res => {
+export function addNewFish (name, threat, method, description) {
+  return dispatch => {
+    dispatch(getFishPending())
+    return request
+      .post('/api/v1/fish/')
+      .send({name, threat, method, description})
+      .then(res => {
       // setToken(res.body.token)
-      dispatch(addNewFishSuccess())
-    })
-    .catch(err => dispatch(getFishError(err.message)))
+        dispatch(addNewFishSuccess())
+      })
+      .catch(err => dispatch(getFishError(err.message)))
+ }
 }
