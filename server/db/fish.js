@@ -21,7 +21,7 @@ function createFish (
 
 function updateFish (db, req, res) {
   const fishId = Number(req.params.id)
-  return db('fish')
+  return db('fishDetails')
     .where('fishId', fishId)
     .update(fishDetails => res.status(200).json(fishDetails))
 }
