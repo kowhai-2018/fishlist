@@ -8,6 +8,13 @@ function getFishDetail (fishId, db = connection) {
     .first()
 }
 
+function deleteFishDetail (fishId, db = connection) {
+  return db('fish_details')
+    .where('fish_details.fish_id', fishID)
+    .dell()
+}
+
 module.exports = {
-  getFishDetail
+  getFishDetail,
+  deleteFishDetail
 }

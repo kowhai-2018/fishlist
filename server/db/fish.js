@@ -21,17 +21,18 @@ function createFish (
 
 function deleteFish (
   fishID,
-  fishDetail,
   db = connection
 ) {
-  db('fish_details')
+  return db('fish_details')
     .where('fish_details.fish_id', fishID)
     .dell()
-    .then(()=> {
+    .then((fish_ID) => {
       db('fish')
-        .where('id', fish_id)
+        .where('id', fish_ID)
         .dell()
-        
+        .then(() => {
+          console.log("deleted fish with ID = " + fish_ID )
+        })
     })
 }
 
