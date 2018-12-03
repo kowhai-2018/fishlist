@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import {addNewFish} from '../actions/fish'
 
 const threatOptions = [
   {key: 1, text: 'Great', value: '1'},
@@ -35,8 +36,21 @@ const methodOptions = [
       description: ''
     };
   }
+  
+handleChange = e => this.setState
+  ({ [ e.target.name ]: e.target.value })
 
-  handleChange = (_, { name, value }) => this.setState({ [ name ]: value })
+  handleSubmit = e => {
+    // alert('A name was submited: ' + this.state);
+    e.preventDefault()
+    this.props.add(this.state)
+    this.setState ({
+      name: '',
+      threat: '',
+      method: '',
+      description: ''    
+    })
+  }
   
   render() {
     return (
