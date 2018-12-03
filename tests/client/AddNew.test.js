@@ -10,3 +10,9 @@ describe('AddNew', () => {
     expect(component).toMatchSnapshot()
   })
 })
+
+it('should render correctly with no props', () => {
+  const component = shallow(<AddNew />)
+
+  expect(component).toMatchSnapshot()
+})
