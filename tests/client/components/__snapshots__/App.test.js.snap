@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> matches the last snapshot 1`] = `
+<BrowserRouter>
+  <React.Fragment>
+    <Route
+      component={[Function]}
+      path="/"
+    />
+    <Container
+      style={
+        Object {
+          "marginTop": 75,
+        }
+      }
+    >
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={[Function]}
+          path="/new"
+        />
+        <Route
+          component={[Function]}
+          path="/fish/:id"
+        />
+        <Route
+          component={[Function]}
+          path="/register"
+        />
+      </Switch>
+    </Container>
+  </React.Fragment>
+</BrowserRouter>
+`;
