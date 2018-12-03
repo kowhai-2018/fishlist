@@ -20,6 +20,12 @@ export function getFishDetailSuccess (fishDetail) {
   }
 }
 
+export function getAddNewFishSuccess (fishDetail) {
+  return {
+    type: 'GET_ADD_NEW_FISHSUCCESS',
+    getAddNewFish
+  }
+}
 export function getFishError (message) {
   return {
     type: 'GET_FISH_ERROR',
@@ -89,4 +95,28 @@ export function searchFish (searchedFish) {
     type: 'SEARCH_FISH',
     searchedFish
   }
+}
+
+// export function AddNewFish (name, threat, method, description) {
+//   return dispatch => {
+//     dispatch(getFishPending())
+
+//     request
+//       .post('/api/v1/fish')
+//       .send({name, threat, method, description})
+//       .then(res => dispatch(getAddNewFishSuccess(res.body)))
+//       .catch(err => dispatch(getFishError(err.message)))
+//   }
+// }
+export const getAddNewFish = (name, threat, method, description) => dispatch => {
+  dispatch(getFishPending())
+
+  return request
+    .post('/api/v1/fish')
+    .send({name, threat, method, description})
+    .then(res => {
+      // setToken(res.body.token)
+      dispatch(getAddNewFishSuccess())
+    })
+    .catch(err => dispatch(getFishError(err.message)))
 }

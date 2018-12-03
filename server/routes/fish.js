@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const { name, levelId, methodId, description, image, link, video } = req.body
+  const {name, levelId, methodId, description, image, link, video} = req.body
   const newFish = {
     name,
     level_id: levelId,
@@ -34,9 +34,9 @@ router.post('/', (req, res) => {
   fish
     .createFish(newFish, fishDetail)
     .then(() => {
-      res.json({ Okay: true })
+      res.json({Okay: true})
     })
-    .catch((err) => res.json({ Okay: false, error: err.message }))
+    .catch((err) => res.json({Okay: false, error: err.message}))
 })
 
 module.exports = router
