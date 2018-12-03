@@ -15,17 +15,17 @@ test('<App />', () => {
 })
 
 test('<App /> renders a <TopMenu /> component', () => {
-  const expected = true
+  const expected = 1
   const wrapper = shallow(<App />)
-  const actual = wrapper.containsMatchingElement(TopMenu)
+  const actual = wrapper.find(TopMenu).length
 
   expect(actual).toBe(expected)
 })
 
 test('<App /> renders a <FishList /> component', () => {
-  const expected = true
+  const expected = 1
   const wrapper = shallow(<App />)
-  const actual = wrapper.containsMatchingElement(FishList)
+  const actual = wrapper.find(FishList).length
 
   expect(actual).toBe(expected)
 })
