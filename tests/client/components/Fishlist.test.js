@@ -1,6 +1,7 @@
 import {orderHighThreat, orderLowThreat, orderMethod} from '../../../client/actions/fish'
 import {sortingAZ, sortingZA} from '../../../client/components/FishList'
 
+
 test('orderHighThreat returns an action with a type', () => {
   const expected = 'SORT_HIGH_THREAT'
   const actual = orderHighThreat('HIGHTHREAT').type
