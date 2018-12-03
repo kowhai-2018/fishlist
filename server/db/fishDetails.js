@@ -13,6 +13,7 @@ function deleteFishDetail (fishId, db = connection) {
   return db('fish_details')
     .where('fish_details.fish_id', fishId)
     .del()
+    .then(() => console.log('FishDetails deleted DETAILS'))
 }
 
 module.exports = {
