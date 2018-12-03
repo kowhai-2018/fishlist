@@ -1,8 +1,9 @@
 import React from 'react'
-import {configure, shallow} from 'enzyme'
+import ShallowRenderer from 'react-test-renderer/shallow'
+import {configure, mount, shallow} from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
-import App from '../../../client/components/App'
+import { App } from '../../../client/components/App'
 import TopMenu from '../../../client/components/TopMenu'
 import FishList from '../../../client/components/FishList'
 
@@ -14,18 +15,9 @@ test('<App />', () => {
   expect(wrapper.text()).toMatch(expected)
 })
 
-test('<App /> renders a <TopMenu /> component', () => {
-  const expected = 1
-  const wrapper = shallow(<App />)
-  const actual = wrapper.find(TopMenu).length
-
-  expect(actual).toBe(expected)
+test('<App /> matches the last snapshot', () => {
+  const renderer = new ShallowRenderer()
+  const actual = renderer.render(<App />)
+  expect(actual).toMatchSnapshot()
 })
 
-test('<App /> renders a <FishList /> component', () => {
-  const expected = 1
-  const wrapper = shallow(<App />)
-  const actual = wrapper.find(FishList).length
-
-  expect(actual).toBe(expected)
-})

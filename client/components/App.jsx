@@ -8,7 +8,7 @@ import FishList from './FishList'
 import Register from './RegisterForm'
 import TopMenu from './TopMenu'
 
-class App extends React.Component {
+export class App extends React.Component {
   render () {
     return (
       <Router>
