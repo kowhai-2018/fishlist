@@ -41,6 +41,27 @@ export function orderZA (sortOrder) {
   }
 }
 
+export function orderHighThreat (sortOrder) {
+  return {
+    type: 'SORT_HIGH_THREAT',
+    sortOrder
+  }
+}
+
+export function orderLowThreat (sortOrder) {
+  return {
+    type: 'SORT_LOW_THREAT',
+    sortOrder
+  }
+}
+
+export function orderMethod (sortOrder) {
+  return {
+    type: 'SORT_METHOD',
+    sortOrder
+  }
+}
+
 export function getFish () {
   return dispatch => {
     dispatch(getFishPending())
@@ -60,5 +81,12 @@ export function getFishDetail (fishId) {
       .get(`/api/v1/fish/${fishId}`)
       .then(res => dispatch(getFishDetailSuccess(res.body)))
       .catch(err => dispatch(getFishError(err.message)))
+  }
+}
+
+export function searchFish (searchedFish) {
+  return {
+    type: 'SEARCH_FISH',
+    searchedFish
   }
 }
