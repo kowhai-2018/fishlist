@@ -2,6 +2,8 @@ const connection = require('./')
 
 function get (db = connection) {
   return db('fish')
+    .join('levels', 'fish.level_id', '=', 'levels.id')
+    .select()
 }
 
 function createFish (
