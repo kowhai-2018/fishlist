@@ -37,8 +37,7 @@ const methodOptions = [
     };
   }
   
-  handleChange = e => this.setState
-  ({ [ e.target.name ]: e.target.value })
+  handleChange = (_, { name, value }) => this.setState({ [ name ]: value })
 
   handleSubmit = e => {
     // alert('A name was submited: ' + this.state);
@@ -60,7 +59,7 @@ const methodOptions = [
           <Form.Select label='Threat' name='threat' placeholder='Threat' 
             options={threatOptions}  onChange={this.handleChange} value={this.state.threat} />
           <Form.Select label='Method' name='method' placeholder='Method' 
-           options={methodOptions} onChange={this.handleChange} value={this.state.Method}/>
+           options={methodOptions} onChange={this.handleChange} value={this.state.method}/>
         </Form.Group>
         <Form.TextArea label='Description' name='description' placeholder='Description' value={this.state.description} onChange={this.handleChange} />
         <Form.Button onClick={this.handleSubmit}>Submit</Form.Button>
