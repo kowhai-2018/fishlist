@@ -10,12 +10,9 @@ function getFishDetail (fishId, db = connection) {
 }
 
 function deleteFishDetail (fishId, db = connection) {
-  db('fish_details')
-    .where('fish_details.fish_id', fishID)
-    .dell()
-    .then((fishId) => {
-      fish.deleteFish(fishID)
-    })
+  return db('fish_details')
+    .where('fish_details.fish_id', fishId)
+    .del()
 }
 
 module.exports = {

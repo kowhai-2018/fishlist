@@ -20,14 +20,11 @@ function createFish (
 }
 
 function deleteFish (
-  fishID,
+  fishId,
   db = connection) {
   return db('fish')
-        .where('id', fish_ID)
-        .dell()
-        .then(() => {
-          console.log("deleted fish with ID = " + fish_ID )
-        })
+        .where('id', fishId)
+        .del()
 }
 
 
