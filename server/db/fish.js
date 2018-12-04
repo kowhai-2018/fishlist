@@ -28,11 +28,23 @@ function createFish (
     }))
 }
 
-function updateFish (db, req, res) {
-  const fishId = Number(req.params.id)
+function updateFish (
+  id,
+  updatedItem,
+  name,
+  color,
+  level,
+  method,
+  db = connection
+) {
   return db('fishDetails')
-    .where('fishId', fishId)
-    .update(fishDetails => res.status(200).json(fishDetails))
+    .where('id', id)
+    .update(
+      name, updatedItem.name,
+      color, updatedItem.color,
+      level, updatedItem.level,
+      method, updatedItem.method
+    )
 }
 
 module.exports = {

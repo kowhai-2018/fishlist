@@ -20,10 +20,3 @@ test('get returns fish', () => {
     })
     .catch(err => expect(err).toBeNull())
 })
-
-test('update fish matches id(1)', () => {
-  expect.assertions(1)
-  const expected = {name: 'paua'}
-  const actual = db.fishId(1, testDb)
-  return expect(actual).resolves.toMatchObject(expected)
-})

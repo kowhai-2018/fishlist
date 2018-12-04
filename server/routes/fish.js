@@ -25,10 +25,19 @@ router.get('/:id', (req, res) => {
     .then(fishDetail => res.status(200).json(fishDetail))
 })
 
-router.put('/:id', (req, res) => {
-  const fishId = Number(req.params.id)
-  fishDetails.where('fishId', fishId)
-    .update(fishDetails => res.status(200).json(fishDetails))
+router.put('/:id', (id, req, res) => {
+  fishDetails.updateFish('updatedItem', id)
+    .then(() => {
+      res.status(200).json({
+        ok: true,
+        message: 'Successfully updated'
+      })
+    })
+    .catch(() => {
+      res.status(400).send({
+        errorType: 'DATABASE_ERROR'
+      })
+    })
 })
 
 router.post('/', (req, res) => {
