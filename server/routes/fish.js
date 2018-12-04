@@ -49,22 +49,14 @@ router.post('/', (req, res) => {
 
 router.post('/delete/:id', (req, res) => {
   const fishId = Number(req.params.id)
-  console.log(`FISHID = ${fishId}`)
   fishDetails
     .deleteFishDetail(fishId)
-    .then((res)=> { 
+    .then(()=> { 
       fish
         .deleteFish(fishId)
-        .then(()=> res.redirect('/'))
-        .catch((err) => res.json({ Okay: false, error: err.message }))
-
-        
-
+        .then(res.send(`deleted fish with id ${fishId}`))
+        // .catch((err) => res.json({ Okay: false, error: err.message }))   
   })
 })
-    
-
-
-
-
+   
 module.exports = router

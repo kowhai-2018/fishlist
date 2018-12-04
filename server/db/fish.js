@@ -34,7 +34,7 @@ function deleteFish (
   return db('fish')
         .where('id', fishId)
         .del()
-        .then(() => console.log('FishTable: deletedFISH'))
+        // .catch((err) => console.log('fish JS '  + err))
 }
 
 
