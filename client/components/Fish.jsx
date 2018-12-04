@@ -1,8 +1,14 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {Header, List, Label, Popup, Image, Grid, Button} from 'semantic-ui-react'
-// import FishDetailPopup from './FishDetailPopup'
+// import styled from 'styled-components'
 
+
+// const TitleHeader = styled(Button)`
+//   &&& {
+//     font-size: 1.8rem;
+//   }
+// `
 export default class Fish extends React.Component {
   constructor (props) {
     super(props)
@@ -15,7 +21,7 @@ export default class Fish extends React.Component {
   render () {
     return (
       <Popup
-        trigger={<List.Item size='large'>
+        wide trigger={<List.Item size='large'>
         <Link to={`/fish/${this.props.fishData.id}`}>
           <Header>
             <Label onMouseOver={this.onHoverHandler}  color={this.props.fishData.color} size='medium' horizontal>
@@ -25,13 +31,11 @@ export default class Fish extends React.Component {
           </Header>
         </Link>
       </List.Item>}
-        content={this.props.fishData.description}
-        basic
       >
         <Grid divided columns='equal'>
           <Grid.Column>
             <Popup
-              trigger={<Button content={this.props.fishData.description} fluid />}
+              trigger={<Button content={this.props.fishData.description.substring(0,40) + '...'} fluid />}
               position='left'
               size='large'
               inverted
