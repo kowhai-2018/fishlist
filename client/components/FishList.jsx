@@ -14,7 +14,6 @@ class FishList extends React.Component {
     if (this.props.info.pending) {
       return <div>LOADING...</div>
     }
-    const fishes = this.props.fish.filter(fish => fish.name.toLowerCase().includes(this.props.search.toLowerCase()))
 
     return (
       <React.Fragment>
@@ -33,10 +32,9 @@ class FishList extends React.Component {
         </div>
         {this.props.info.error && <div>{this.props.info.error}</div>}
         <Search />
-        <List divided selection>
-          {this.props.fish && fishes.map(fish =>
-            <Fish key={fish.id} fishData={fish} />
-          )}
+        <List>
+          {this.props.fish && this.props.fish.map(fish =>
+            <Fish key={fish.id} fishData={fish} />)}
         </List>
       </React.Fragment>
     )
@@ -95,8 +93,9 @@ export function sortingMethod (items) {
   })
 }
 
+
 const mapStateToProps = state => {
-  const sortedFish = [...state.fish]
+  const sortedFish  = [... state.fish]
   if (state.sort.sortOrder == 'AZ') {
     sortingAZ(sortedFish)
   } else if (state.sort.sortOrder == 'ZA') {
@@ -108,8 +107,10 @@ const mapStateToProps = state => {
   } else if (state.sort.sortOrder == 'METHOD') {
     sortingMethod(sortedFish)
   }
+  const filteredFish = sortedFish.filter(fish => fish.name.toLowerCase().includes(state.search.toLowerCase()))
+
   return {
-    fish: sortedFish,
+    fish: filteredFish,
     search: state.search,
     info: state.info,
     sortOrder: state.sort.sortOrder
@@ -128,3 +129,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FishList)
+
