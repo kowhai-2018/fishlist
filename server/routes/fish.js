@@ -51,12 +51,21 @@ router.post('/delete/:id', (req, res) => {
   const fishId = Number(req.params.id)
   fishDetails
     .deleteFishDetail(fishId)
-    .then(()=> { 
-      fish
-        .deleteFish(fishId)
-        .then(res.send(`deleted fish with id ${fishId}`))
-        // .catch((err) => res.json({ Okay: false, error: err.message }))   
+    .then((delConfirmationDetail) => {
+      !delConfirmationDetail ?
+       res.json( { deleteSucces: false, id: fishId , db: 'FishDetails'} )
+       :
+      () => { 
+        fish
+          .deleteFish(fishId)
+          .then((delConfirmationFish) => { 
+            delConfirmationFish ?  
+            res.json( { deleteSucces: true, id: fishId } ) :
+            res.json( { deleteSucces: false, id: fishId, db: 'Fish' } )
+          })
+        }
+      
   })
-})
+})  
    
 module.exports = router
