@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Form } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { addNewFish } from '../actions/fish'
+import {connect} from 'react-redux'
 
 const threatOptions = [
   {key: 1, text: 'Great', value: '1'},
@@ -26,7 +27,7 @@ const methodOptions = [
 ]
 
 
-  export default class AddNew extends Component {
+  class AddNew extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,13 +35,13 @@ const methodOptions = [
       threat: '',
       method: '',
       description: ''
-    };
+    }
   }
   
   handleChange = (_, { name, value }) => this.setState({ [ name ]: value })
 
   handleSubmit = e => {
-    // alert('A name was submited: ' + this.state);
+    console.log('AddNew')
     e.preventDefault()
     this.props.dispatch(addNewFish(this.state))
     this.setState ({
@@ -63,7 +64,16 @@ const methodOptions = [
         </Form.Group>
         <Form.TextArea label='Description' name='description' placeholder='Description' value={this.state.description} onChange={this.handleChange} />
         <Form.Button onClick={this.handleSubmit}>Submit</Form.Button>
+        
       </Form>
     )
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addNewFish: (newFish) => dispatch(addNewFish(newFish))
+  }
+}
+
+export default connect(mapDispatchToProps) (AddNew)

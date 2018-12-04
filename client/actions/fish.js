@@ -97,16 +97,16 @@ export function searchFish (searchedFish) {
   }
 }
 
-export function addNewFish (name, threat, method, description) {
+export function addNewFish (newFish) {
+  console.log('action')
   return dispatch => {
     dispatch(getFishPending())
     return request
       .post('/api/v1/fish/')
-      .send({name, threat, method, description})
+      .send(newFish)
       .then(res => {
-      // setToken(res.body.token)
         dispatch(addNewFishSuccess())
       })
       .catch(err => dispatch(getFishError(err.message)))
- }
+  }
 }
