@@ -1,5 +1,29 @@
 exports.seed = knex =>
   knex('fish').del()
+    .then(() => knex('levels').del())
+    .then(() => knex('methods').del())
+    .then(() =>
+      knex('levels').insert([
+        {id: 1, level: 'Great', color: 'green'},
+        {id: 2, level: 'Good', color: 'olive'},
+        {id: 3, level: 'OK', color: 'yellow'},
+        {id: 4, level: 'Eat less', color: 'orange'},
+        {id: 5, level: 'Don\'t eat', color: 'red'}
+      ]))
+    .then(() =>
+      knex('methods').insert([
+        { id: 1, method: 'Farmed' },
+        { id: 2, method: 'Jig' },
+        { id: 3, method: 'Troll' },
+        { id: 4, method: 'Long line' },
+        { id: 5, method: 'Net' },
+        { id: 6, method: 'Diving' },
+        { id: 7, method: 'Baited pots' },
+        { id: 8, method: 'Mid-water trawl' },
+        { id: 9, method: 'Bottom trawl' },
+        { id: 10, method: 'Dredge' },
+        { id: 11, method: 'Trawl' }
+      ]))
     .then(() =>
       knex('fish').insert(
         [
