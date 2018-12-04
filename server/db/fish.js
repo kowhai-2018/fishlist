@@ -2,7 +2,9 @@ const connection = require('./')
 
 function get (db = connection) {
   return db('fish')
-    .join('levels', 'fish.level_id', '=', 'levels.id')
+    .join('levels', 'fish.level_id', 'levels.id')
+    .leftOuterJoin('methods', 'fish.method_id', 'methods.id')
+    .join('fish_details', 'fish.id', 'fish_details.fish_id')
     .select(
       'fish.id as id',
       'fish.name as name',
@@ -10,6 +12,11 @@ function get (db = connection) {
       'level',
       'level_id',
       'method_id',
+      'method',
+      'description',
+      'image',
+      'link',
+      'video',
       'fish.created_at',
       'fish.updated_at'
     )
