@@ -26,25 +26,30 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const { name, levelId, methodId, description, image, link, video } = req.body
-  const newFish = {
-    name,
-    level_id: levelId,
-    method_id: methodId
-  }
-  const fishDetail = {
-    description,
-    image,
-    link,
-    video
-  }
+  if (req.body.name) {
+    const {name, levelId, methodId, description, image, link, video} = req.body
+    const newFish = {
+      name,
+      level_id: levelId,
+      method_id: methodId
+    }
+    const fishDetail = {
+      description,
+      image,
+      link,
+      video
+    }
 
-  fish
-    .createFish(newFish, fishDetail)
-    .then(() => {
-      res.json({ Okay: true })
-    })
-    .catch((err) => res.json({ Okay: false, error: err.message }))
+    fish
+      .createFish(newFish, fishDetail)
+      .then(() => {
+        res.json({Okay: true})
+      })
+      .catch((err) => res.json({Okay: false, error: err.message}))
+  }
+  else {
+    res.json({Okay: false, error: 'Name field is required.'})
+  }
 })
 
 module.exports = router
