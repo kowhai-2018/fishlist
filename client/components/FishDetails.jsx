@@ -23,8 +23,8 @@ export class FishDetails extends React.Component {
               <Icon onClick={() => history.back()} color='green' name='arrow circle left' size='huge' />
             </Grid.Column>
             <Grid.Column>
-              <Header size='huge' textAlign='center'>{this.props.fishDetails.name} <em>{this.props.fishDetails.method_id}</em>
-                <h3>{this.props.fishDetails.level_id}</h3></Header>
+              <Header size='huge' textAlign='center'>{this.props.fishDetails.name} <em>{this.props.fishDetails.method}</em>
+                <h3>{this.props.fishDetails.level}</h3></Header>
             </Grid.Column>
             <Grid.Column>
               <Image circular align='right' size='small' src={this.props.fishDetails.image}></Image>
