@@ -14,8 +14,13 @@ function checkUser (req, res, next) {
   const { username, password } = req.body
 
   users.getByUsername(username)
-    .then(({ id, hash }) => {
-      res.locals.userId = id
+    .then(user => {
+      if (!user) {
+        return next(new Error('Unknown user.'))
+      }
+
+      const { hash, ...userWithoutHash } = user
+      res.locals.user = userWithoutHash
       return hashing.verify(hash, password)
     })
     .then(verified => {
@@ -30,8 +35,9 @@ function checkUser (req, res, next) {
 
 function createUser (req, res, next) {
   users.create(req.body)
-    .then(([ id ]) => {
-      res.locals.userId = id
+    .then(user => {
+      const { hash, ...userWithoutHash } = user
+      res.locals.user = userWithoutHash
       next()
     })
     .catch(err => {
@@ -53,9 +59,9 @@ function errorHandler (err, req, res, next) {
 }
 
 function issueToken (req, res, next) {
-  const { userId } = res.locals
+  const { id } = res.locals.user
 
-  const token = tokens.create(userId)
+  const token = tokens.create(id)
   res.status(200).json({ ok: true, token })
 }
 
@@ -69,6 +75,8 @@ function validateLogin (req, res, next) {
   if (!password) {
     return next(new Error('No password provided.'))
   }
+
+  next()
 }
 
 function validateRegistration (req, res, next) {
@@ -85,6 +93,8 @@ function validateRegistration (req, res, next) {
   if (!email) {
     return next(new Error('No email provided.'))
   }
+
+  next()
 }
 
 module.exports = router

@@ -46,3 +46,9 @@ Luckily, you have some senior developers supervising the work ahead. Because eve
 
 You can organise yourselves however you like. Think about what learning goals you still have at this stage. What would you like to learn over the next few days?
 
+If there's time, one of the seniors on your team will set up a continuous integration hook that can run tests, deploy, and give you more information about your PRs.
+
+## Good luck!
+
+And may the fish be with you.
+
