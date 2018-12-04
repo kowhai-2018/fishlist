@@ -28,7 +28,27 @@ function createFish (
     }))
 }
 
+function updateFish (
+  id,
+  updatedItem,
+  name,
+  color,
+  level,
+  method,
+  db = connection
+) {
+  return db('fishDetails')
+    .where('id', id)
+    .update(
+      name, updatedItem.name,
+      color, updatedItem.color,
+      level, updatedItem.level,
+      method, updatedItem.method
+    )
+}
+
 module.exports = {
   get,
-  createFish
+  createFish,
+  updateFish
 }

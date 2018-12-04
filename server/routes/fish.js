@@ -25,6 +25,21 @@ router.get('/:id', (req, res) => {
     .then(fishDetail => res.status(200).json(fishDetail))
 })
 
+router.put('/:id', (id, req, res) => {
+  fishDetails.updateFish('updatedItem', id)
+    .then(() => {
+      res.status(200).json({
+        ok: true,
+        message: 'Successfully updated'
+      })
+    })
+    .catch(() => {
+      res.status(400).send({
+        errorType: 'DATABASE_ERROR'
+      })
+    })
+})
+
 router.post('/', (req, res) => {
   if (req.body.name) {
     const {name, levelId, methodId, description, image, link, video} = req.body

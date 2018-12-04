@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import { Button, Message } from 'semantic-ui-react'
 
-import { RegisterForm } from '../../client/components/RegisterForm'
+import { RegisterForm } from '../../../client/components/RegisterForm'
 
 test('RegisterForm should show a message if username is not provided', () => {
   const props = {
