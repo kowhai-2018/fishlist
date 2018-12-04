@@ -20,6 +20,7 @@ export default class Fish extends React.Component {
 
   render () {
     return (
+      //Popup is wrapped outside the list items
       <Popup
         wide trigger={<List.Item size='large'>
         <Link to={`/fish/${this.props.fishData.id}`}>
