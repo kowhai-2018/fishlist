@@ -23,7 +23,8 @@ export class FishDetails extends React.Component {
               <Icon onClick={() => history.back()} color='green' name='arrow circle left' size='huge' />
             </Grid.Column>
             <Grid.Column>
-              <Header size='huge' textAlign='center'>{this.props.fishDetails.name}</Header> {/* This is where the props for the fish name will go */}
+              <Header size='huge' textAlign='center'>{this.props.fishDetails.name} <em>{this.props.fishDetails.method && '(' + this.props.fishDetails.method + ')'}</em>
+                <h3>{this.props.fishDetails.level}</h3></Header>
             </Grid.Column>
             <Grid.Column>
               <Image circular align='right' size='small' src={this.props.fishDetails.image}></Image>
@@ -32,7 +33,7 @@ export class FishDetails extends React.Component {
         </Container>
         <Divider hidden />
         <Container>
-          <p>{this.props.fishDetails.description}</p> {/* This is where the props for the description will go */}
+          <p>{this.props.fishDetails.description}</p>
           <a href={this.props.fishDetails.link}><Button basic color='blue' content='More info' icon='info circle' labelPosition='left'/></a>
         </Container>
         <Divider />
@@ -45,9 +46,6 @@ export class FishDetails extends React.Component {
             </Grid.Column>
             <Grid.Column align='center'>
               <a href={this.props.fishDetails.video}><Button basic color='blue' content='Watch video' icon='video play' labelPosition='left'/></a>
-              {/* <Placeholder style={{height: 300, width: 480}} > */}
-              {/* <div className="ui video" data-source={this.props.fishDetails[0].video} data-id="i_mKY2CQ9Kk" data-image="/images/cat.jpg"></div> */}
-              {/* </Placeholder> */}
             </Grid.Column>
           </Grid>
         </Container>
@@ -58,6 +56,7 @@ export class FishDetails extends React.Component {
 
 const mapStateToProps = state => {
   return {
+    fish: state.fish,
     fishDetails: state.fishDetails,
     info: state.info
   }

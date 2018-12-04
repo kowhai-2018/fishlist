@@ -15,6 +15,26 @@ function get (db = connection) {
     )
 }
 
+function getById (id, db = connection) {
+  return db('fish')
+    .join('levels', 'fish.level_id', 'levels.id')
+    .leftOuterJoin('methods', 'methods.id', 'method_id')
+    .join('fish_details', 'fish.id', 'fish_details.id')
+    .where('fish.id', id)
+    .select(
+      'fish.id as id',
+      'fish.name as name',
+      'description',
+      'level_id',
+      'level',
+      'color',
+      'method_id',
+      'method',
+      'fish.created_at',
+      'fish.updated_at'
+    )
+}
+
 function createFish (
   newFish,
   fishDetail,
@@ -28,7 +48,20 @@ function createFish (
     }))
 }
 
+function deleteFish (
+  fishId,
+  db = connection) {
+  return db('fish')
+        .where('id', fishId)
+        .del()
+        // .catch((err) => console.log('fish JS '  + err))
+}
+
+
+
 module.exports = {
   get,
-  createFish
+  getById,
+  createFish,
+  deleteFish
 }

@@ -52,4 +52,16 @@ router.post('/', (req, res) => {
   }
 })
 
+router.post('/delete/:id', (req, res) => {
+  const fishId = Number(req.params.id)
+  fishDetails
+    .deleteFishDetail(fishId)
+    .then(()=> { 
+      fish
+        .deleteFish(fishId)
+        .then(res.send(`deleted fish with id ${fishId}`))
+        // .catch((err) => res.json({ Okay: false, error: err.message }))   
+  })
+})
+   
 module.exports = router
