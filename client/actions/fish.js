@@ -91,13 +91,13 @@ export function searchFish (searchedFish) {
   }
 }
 
-export function delFishDetail (fishId) {
+export function delFish (fishId) {
   return dispatch => {
     dispatch(delFishPending())
 
     request
       .post(`/api/v1/fish/delete/${fishId}`)
-      .then(res => dispatch(delFishDetailSuccess(res.body)))
+      .then(res => dispatch(delFishSuccess(res.body)))
       .catch(err => dispatch(delFishError(err.message)))
   }
 }

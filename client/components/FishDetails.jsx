@@ -1,11 +1,15 @@
 import React from 'react'
-import {Container, Grid, Icon, Image, Header, Divider, Button, Placeholder} from 'semantic-ui-react'
+import {Container, Grid, Icon, Image, Header, Divider, Button, Placeholder, Link} from 'semantic-ui-react'
 import {connect} from 'react-redux'
-import {getFishDetail} from '../actions/fish'
+import {getFishDetail, delFish} from '../actions/fish'
 
 // import {Link} from 'react-router-dom'
 
 export class FishDetails extends React.Component {
+  state = {
+    deleted: ''
+  }
+
   componentDidMount () {
     this.props.getFishDetail(this.props.match.params.id)
   }
@@ -49,7 +53,7 @@ export class FishDetails extends React.Component {
             </Grid.Column>
             <Grid.Row>
               <Grid.Column align='center'>
-                <a href={`/api/v1/fish/delete/${this.props.fishDetails.id}`}><Button basic color='red' content='Delete' icon='trash alternate' labelPosition='left'/></a>
+                <Button basic color='red' content='Delete' icon='trash alternate' labelPosition='left' onClick={() => this.props.delFish(`${this.props.fishDetails.id}`)} />
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -69,7 +73,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getFishDetail: (fishId) => dispatch(getFishDetail(fishId))
+    getFishDetail: (fishId) => dispatch(getFishDetail(fishId)),
+    delFish: (x) => dispatch(delFish(x))
   }
 }
 
