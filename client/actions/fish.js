@@ -68,7 +68,7 @@ export function getFish () {
 
     request
       .get('/api/v1/fish')
-      .then(res => dispatch(getFishSuccess(res.body)))
+      .then(res => dispatch(getFishSuccess(res.body.fish)))
       .catch(err => dispatch(getFishError(err.message)))
   }
 }
