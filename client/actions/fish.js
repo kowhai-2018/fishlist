@@ -13,10 +13,22 @@ export function getFishSuccess (fish) {
   }
 }
 
+export function getFishDetailPending () {
+  return {
+    type: 'GET_FISH_DETAIL_PENDING'
+  }
+}
+
 export function getFishDetailSuccess (fishDetail) {
   return {
     type: 'GET_FISH_DETAIL_SUCCESS',
     fishDetail
+  }
+}
+
+export function clearFishDetail () {
+  return {
+    type: 'CLEAR_FISH_DETAIL'
   }
 }
 
@@ -30,6 +42,13 @@ export function getFishError (message) {
   return {
     type: 'GET_FISH_ERROR',
     message
+  }
+}
+
+export function getFishDetailError (error) {
+  return {
+    type: 'GET_FISH_DETAIL_ERROR',
+    error
   }
 }
 
@@ -81,12 +100,12 @@ export function getFish () {
 
 export function getFishDetail (fishId) {
   return dispatch => {
-    dispatch(getFishPending())
+    dispatch(getFishDetailPending())
 
     request
       .get(`/api/v1/fish/${fishId}`)
       .then(res => dispatch(getFishDetailSuccess(res.body)))
-      .catch(err => dispatch(getFishError(err.message)))
+      .catch(err => dispatch(getFishDetailError(err.message)))
   }
 }
 
