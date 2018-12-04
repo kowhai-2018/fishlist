@@ -1,0 +1,1831 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddNew should render correctly in "debug" mode 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AddNew
+    debug={true}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "as": "form",
+      "children": Array [
+        <FormGroup
+          widths="equal"
+        >
+          <FormInput
+            as={[Function]}
+            control={[Function]}
+            label="Name"
+            name="name"
+            onChange={[Function]}
+            placeholder="Name"
+            value=""
+          />
+          <FormSelect
+            as={[Function]}
+            control={[Function]}
+            label="Threat"
+            name="threat"
+            onChange={[Function]}
+            options={
+              Array [
+                Object {
+                  "key": 1,
+                  "text": "Great",
+                  "value": "1",
+                },
+                Object {
+                  "key": 2,
+                  "text": "Good",
+                  "value": "2",
+                },
+                Object {
+                  "key": 3,
+                  "text": "OK",
+                  "value": "3",
+                },
+                Object {
+                  "key": 4,
+                  "text": "Eat less",
+                  "value": "4",
+                },
+                Object {
+                  "key": 5,
+                  "text": "Don't eat",
+                  "value": "5",
+                },
+              ]
+            }
+            placeholder="Threat"
+            value=""
+          />
+          <FormSelect
+            as={[Function]}
+            control={[Function]}
+            label="Method"
+            name="method"
+            onChange={[Function]}
+            options={
+              Array [
+                Object {
+                  "key": 1,
+                  "text": "Farmed",
+                  "value": "1",
+                },
+                Object {
+                  "key": 2,
+                  "text": "Jig",
+                  "value": "2",
+                },
+                Object {
+                  "key": 3,
+                  "text": "Troll",
+                  "value": "3",
+                },
+                Object {
+                  "key": 4,
+                  "text": "Long line",
+                  "value": "4",
+                },
+                Object {
+                  "key": 5,
+                  "text": "Net",
+                  "value": "5",
+                },
+                Object {
+                  "key": 6,
+                  "text": "Diving",
+                  "value": "6",
+                },
+                Object {
+                  "key": 7,
+                  "text": "Baited pots",
+                  "value": "7",
+                },
+                Object {
+                  "key": 8,
+                  "text": "Mid-water trawl",
+                  "value": "8",
+                },
+                Object {
+                  "key": 9,
+                  "text": "Bottom trawl",
+                  "value": "9",
+                },
+                Object {
+                  "key": 10,
+                  "text": "Dredge",
+                  "value": "10",
+                },
+                Object {
+                  "key": 11,
+                  "text": "Trawl",
+                  "value": "11",
+                },
+              ]
+            }
+            placeholder="Method"
+          />
+        </FormGroup>,
+        <FormTextArea
+          as={[Function]}
+          control={[Function]}
+          label="Description"
+          name="description"
+          onChange={[Function]}
+          placeholder="Description"
+          value=""
+        />,
+        <FormButton
+          as={[Function]}
+          control={[Function]}
+        >
+          Submit
+        </FormButton>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <FormInput
+              as={[Function]}
+              control={[Function]}
+              label="Name"
+              name="name"
+              onChange={[Function]}
+              placeholder="Name"
+              value=""
+            />,
+            <FormSelect
+              as={[Function]}
+              control={[Function]}
+              label="Threat"
+              name="threat"
+              onChange={[Function]}
+              options={
+                Array [
+                  Object {
+                    "key": 1,
+                    "text": "Great",
+                    "value": "1",
+                  },
+                  Object {
+                    "key": 2,
+                    "text": "Good",
+                    "value": "2",
+                  },
+                  Object {
+                    "key": 3,
+                    "text": "OK",
+                    "value": "3",
+                  },
+                  Object {
+                    "key": 4,
+                    "text": "Eat less",
+                    "value": "4",
+                  },
+                  Object {
+                    "key": 5,
+                    "text": "Don't eat",
+                    "value": "5",
+                  },
+                ]
+              }
+              placeholder="Threat"
+              value=""
+            />,
+            <FormSelect
+              as={[Function]}
+              control={[Function]}
+              label="Method"
+              name="method"
+              onChange={[Function]}
+              options={
+                Array [
+                  Object {
+                    "key": 1,
+                    "text": "Farmed",
+                    "value": "1",
+                  },
+                  Object {
+                    "key": 2,
+                    "text": "Jig",
+                    "value": "2",
+                  },
+                  Object {
+                    "key": 3,
+                    "text": "Troll",
+                    "value": "3",
+                  },
+                  Object {
+                    "key": 4,
+                    "text": "Long line",
+                    "value": "4",
+                  },
+                  Object {
+                    "key": 5,
+                    "text": "Net",
+                    "value": "5",
+                  },
+                  Object {
+                    "key": 6,
+                    "text": "Diving",
+                    "value": "6",
+                  },
+                  Object {
+                    "key": 7,
+                    "text": "Baited pots",
+                    "value": "7",
+                  },
+                  Object {
+                    "key": 8,
+                    "text": "Mid-water trawl",
+                    "value": "8",
+                  },
+                  Object {
+                    "key": 9,
+                    "text": "Bottom trawl",
+                    "value": "9",
+                  },
+                  Object {
+                    "key": 10,
+                    "text": "Dredge",
+                    "value": "10",
+                  },
+                  Object {
+                    "key": 11,
+                    "text": "Trawl",
+                    "value": "11",
+                  },
+                ]
+              }
+              placeholder="Method"
+            />,
+          ],
+          "widths": "equal",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "as": [Function],
+              "control": [Function],
+              "label": "Name",
+              "name": "name",
+              "onChange": [Function],
+              "placeholder": "Name",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "as": [Function],
+              "control": [Function],
+              "label": "Threat",
+              "name": "threat",
+              "onChange": [Function],
+              "options": Array [
+                Object {
+                  "key": 1,
+                  "text": "Great",
+                  "value": "1",
+                },
+                Object {
+                  "key": 2,
+                  "text": "Good",
+                  "value": "2",
+                },
+                Object {
+                  "key": 3,
+                  "text": "OK",
+                  "value": "3",
+                },
+                Object {
+                  "key": 4,
+                  "text": "Eat less",
+                  "value": "4",
+                },
+                Object {
+                  "key": 5,
+                  "text": "Don't eat",
+                  "value": "5",
+                },
+              ],
+              "placeholder": "Threat",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "as": [Function],
+              "control": [Function],
+              "label": "Method",
+              "name": "method",
+              "onChange": [Function],
+              "options": Array [
+                Object {
+                  "key": 1,
+                  "text": "Farmed",
+                  "value": "1",
+                },
+                Object {
+                  "key": 2,
+                  "text": "Jig",
+                  "value": "2",
+                },
+                Object {
+                  "key": 3,
+                  "text": "Troll",
+                  "value": "3",
+                },
+                Object {
+                  "key": 4,
+                  "text": "Long line",
+                  "value": "4",
+                },
+                Object {
+                  "key": 5,
+                  "text": "Net",
+                  "value": "5",
+                },
+                Object {
+                  "key": 6,
+                  "text": "Diving",
+                  "value": "6",
+                },
+                Object {
+                  "key": 7,
+                  "text": "Baited pots",
+                  "value": "7",
+                },
+                Object {
+                  "key": 8,
+                  "text": "Mid-water trawl",
+                  "value": "8",
+                },
+                Object {
+                  "key": 9,
+                  "text": "Bottom trawl",
+                  "value": "9",
+                },
+                Object {
+                  "key": 10,
+                  "text": "Dredge",
+                  "value": "10",
+                },
+                Object {
+                  "key": 11,
+                  "text": "Trawl",
+                  "value": "11",
+                },
+              ],
+              "placeholder": "Method",
+              "value": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "as": [Function],
+          "control": [Function],
+          "label": "Description",
+          "name": "description",
+          "onChange": [Function],
+          "placeholder": "Description",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "as": [Function],
+          "children": "Submit",
+          "control": [Function],
+        },
+        "ref": null,
+        "rendered": "Submit",
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "as": "form",
+        "children": Array [
+          <FormGroup
+            widths="equal"
+          >
+            <FormInput
+              as={[Function]}
+              control={[Function]}
+              label="Name"
+              name="name"
+              onChange={[Function]}
+              placeholder="Name"
+              value=""
+            />
+            <FormSelect
+              as={[Function]}
+              control={[Function]}
+              label="Threat"
+              name="threat"
+              onChange={[Function]}
+              options={
+                Array [
+                  Object {
+                    "key": 1,
+                    "text": "Great",
+                    "value": "1",
+                  },
+                  Object {
+                    "key": 2,
+                    "text": "Good",
+                    "value": "2",
+                  },
+                  Object {
+                    "key": 3,
+                    "text": "OK",
+                    "value": "3",
+                  },
+                  Object {
+                    "key": 4,
+                    "text": "Eat less",
+                    "value": "4",
+                  },
+                  Object {
+                    "key": 5,
+                    "text": "Don't eat",
+                    "value": "5",
+                  },
+                ]
+              }
+              placeholder="Threat"
+              value=""
+            />
+            <FormSelect
+              as={[Function]}
+              control={[Function]}
+              label="Method"
+              name="method"
+              onChange={[Function]}
+              options={
+                Array [
+                  Object {
+                    "key": 1,
+                    "text": "Farmed",
+                    "value": "1",
+                  },
+                  Object {
+                    "key": 2,
+                    "text": "Jig",
+                    "value": "2",
+                  },
+                  Object {
+                    "key": 3,
+                    "text": "Troll",
+                    "value": "3",
+                  },
+                  Object {
+                    "key": 4,
+                    "text": "Long line",
+                    "value": "4",
+                  },
+                  Object {
+                    "key": 5,
+                    "text": "Net",
+                    "value": "5",
+                  },
+                  Object {
+                    "key": 6,
+                    "text": "Diving",
+                    "value": "6",
+                  },
+                  Object {
+                    "key": 7,
+                    "text": "Baited pots",
+                    "value": "7",
+                  },
+                  Object {
+                    "key": 8,
+                    "text": "Mid-water trawl",
+                    "value": "8",
+                  },
+                  Object {
+                    "key": 9,
+                    "text": "Bottom trawl",
+                    "value": "9",
+                  },
+                  Object {
+                    "key": 10,
+                    "text": "Dredge",
+                    "value": "10",
+                  },
+                  Object {
+                    "key": 11,
+                    "text": "Trawl",
+                    "value": "11",
+                  },
+                ]
+              }
+              placeholder="Method"
+            />
+          </FormGroup>,
+          <FormTextArea
+            as={[Function]}
+            control={[Function]}
+            label="Description"
+            name="description"
+            onChange={[Function]}
+            placeholder="Description"
+            value=""
+          />,
+          <FormButton
+            as={[Function]}
+            control={[Function]}
+          >
+            Submit
+          </FormButton>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <FormInput
+                as={[Function]}
+                control={[Function]}
+                label="Name"
+                name="name"
+                onChange={[Function]}
+                placeholder="Name"
+                value=""
+              />,
+              <FormSelect
+                as={[Function]}
+                control={[Function]}
+                label="Threat"
+                name="threat"
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "key": 1,
+                      "text": "Great",
+                      "value": "1",
+                    },
+                    Object {
+                      "key": 2,
+                      "text": "Good",
+                      "value": "2",
+                    },
+                    Object {
+                      "key": 3,
+                      "text": "OK",
+                      "value": "3",
+                    },
+                    Object {
+                      "key": 4,
+                      "text": "Eat less",
+                      "value": "4",
+                    },
+                    Object {
+                      "key": 5,
+                      "text": "Don't eat",
+                      "value": "5",
+                    },
+                  ]
+                }
+                placeholder="Threat"
+                value=""
+              />,
+              <FormSelect
+                as={[Function]}
+                control={[Function]}
+                label="Method"
+                name="method"
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "key": 1,
+                      "text": "Farmed",
+                      "value": "1",
+                    },
+                    Object {
+                      "key": 2,
+                      "text": "Jig",
+                      "value": "2",
+                    },
+                    Object {
+                      "key": 3,
+                      "text": "Troll",
+                      "value": "3",
+                    },
+                    Object {
+                      "key": 4,
+                      "text": "Long line",
+                      "value": "4",
+                    },
+                    Object {
+                      "key": 5,
+                      "text": "Net",
+                      "value": "5",
+                    },
+                    Object {
+                      "key": 6,
+                      "text": "Diving",
+                      "value": "6",
+                    },
+                    Object {
+                      "key": 7,
+                      "text": "Baited pots",
+                      "value": "7",
+                    },
+                    Object {
+                      "key": 8,
+                      "text": "Mid-water trawl",
+                      "value": "8",
+                    },
+                    Object {
+                      "key": 9,
+                      "text": "Bottom trawl",
+                      "value": "9",
+                    },
+                    Object {
+                      "key": 10,
+                      "text": "Dredge",
+                      "value": "10",
+                    },
+                    Object {
+                      "key": 11,
+                      "text": "Trawl",
+                      "value": "11",
+                    },
+                  ]
+                }
+                placeholder="Method"
+              />,
+            ],
+            "widths": "equal",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": [Function],
+                "control": [Function],
+                "label": "Name",
+                "name": "name",
+                "onChange": [Function],
+                "placeholder": "Name",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": [Function],
+                "control": [Function],
+                "label": "Threat",
+                "name": "threat",
+                "onChange": [Function],
+                "options": Array [
+                  Object {
+                    "key": 1,
+                    "text": "Great",
+                    "value": "1",
+                  },
+                  Object {
+                    "key": 2,
+                    "text": "Good",
+                    "value": "2",
+                  },
+                  Object {
+                    "key": 3,
+                    "text": "OK",
+                    "value": "3",
+                  },
+                  Object {
+                    "key": 4,
+                    "text": "Eat less",
+                    "value": "4",
+                  },
+                  Object {
+                    "key": 5,
+                    "text": "Don't eat",
+                    "value": "5",
+                  },
+                ],
+                "placeholder": "Threat",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": [Function],
+                "control": [Function],
+                "label": "Method",
+                "name": "method",
+                "onChange": [Function],
+                "options": Array [
+                  Object {
+                    "key": 1,
+                    "text": "Farmed",
+                    "value": "1",
+                  },
+                  Object {
+                    "key": 2,
+                    "text": "Jig",
+                    "value": "2",
+                  },
+                  Object {
+                    "key": 3,
+                    "text": "Troll",
+                    "value": "3",
+                  },
+                  Object {
+                    "key": 4,
+                    "text": "Long line",
+                    "value": "4",
+                  },
+                  Object {
+                    "key": 5,
+                    "text": "Net",
+                    "value": "5",
+                  },
+                  Object {
+                    "key": 6,
+                    "text": "Diving",
+                    "value": "6",
+                  },
+                  Object {
+                    "key": 7,
+                    "text": "Baited pots",
+                    "value": "7",
+                  },
+                  Object {
+                    "key": 8,
+                    "text": "Mid-water trawl",
+                    "value": "8",
+                  },
+                  Object {
+                    "key": 9,
+                    "text": "Bottom trawl",
+                    "value": "9",
+                  },
+                  Object {
+                    "key": 10,
+                    "text": "Dredge",
+                    "value": "10",
+                  },
+                  Object {
+                    "key": 11,
+                    "text": "Trawl",
+                    "value": "11",
+                  },
+                ],
+                "placeholder": "Method",
+                "value": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "as": [Function],
+            "control": [Function],
+            "label": "Description",
+            "name": "description",
+            "onChange": [Function],
+            "placeholder": "Description",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "as": [Function],
+            "children": "Submit",
+            "control": [Function],
+          },
+          "ref": null,
+          "rendered": "Submit",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`should render correctly with no props 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AddNew />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "as": "form",
+      "children": Array [
+        <FormGroup
+          widths="equal"
+        >
+          <FormInput
+            as={[Function]}
+            control={[Function]}
+            label="Name"
+            name="name"
+            onChange={[Function]}
+            placeholder="Name"
+            value=""
+          />
+          <FormSelect
+            as={[Function]}
+            control={[Function]}
+            label="Threat"
+            name="threat"
+            onChange={[Function]}
+            options={
+              Array [
+                Object {
+                  "key": 1,
+                  "text": "Great",
+                  "value": "1",
+                },
+                Object {
+                  "key": 2,
+                  "text": "Good",
+                  "value": "2",
+                },
+                Object {
+                  "key": 3,
+                  "text": "OK",
+                  "value": "3",
+                },
+                Object {
+                  "key": 4,
+                  "text": "Eat less",
+                  "value": "4",
+                },
+                Object {
+                  "key": 5,
+                  "text": "Don't eat",
+                  "value": "5",
+                },
+              ]
+            }
+            placeholder="Threat"
+            value=""
+          />
+          <FormSelect
+            as={[Function]}
+            control={[Function]}
+            label="Method"
+            name="method"
+            onChange={[Function]}
+            options={
+              Array [
+                Object {
+                  "key": 1,
+                  "text": "Farmed",
+                  "value": "1",
+                },
+                Object {
+                  "key": 2,
+                  "text": "Jig",
+                  "value": "2",
+                },
+                Object {
+                  "key": 3,
+                  "text": "Troll",
+                  "value": "3",
+                },
+                Object {
+                  "key": 4,
+                  "text": "Long line",
+                  "value": "4",
+                },
+                Object {
+                  "key": 5,
+                  "text": "Net",
+                  "value": "5",
+                },
+                Object {
+                  "key": 6,
+                  "text": "Diving",
+                  "value": "6",
+                },
+                Object {
+                  "key": 7,
+                  "text": "Baited pots",
+                  "value": "7",
+                },
+                Object {
+                  "key": 8,
+                  "text": "Mid-water trawl",
+                  "value": "8",
+                },
+                Object {
+                  "key": 9,
+                  "text": "Bottom trawl",
+                  "value": "9",
+                },
+                Object {
+                  "key": 10,
+                  "text": "Dredge",
+                  "value": "10",
+                },
+                Object {
+                  "key": 11,
+                  "text": "Trawl",
+                  "value": "11",
+                },
+              ]
+            }
+            placeholder="Method"
+          />
+        </FormGroup>,
+        <FormTextArea
+          as={[Function]}
+          control={[Function]}
+          label="Description"
+          name="description"
+          onChange={[Function]}
+          placeholder="Description"
+          value=""
+        />,
+        <FormButton
+          as={[Function]}
+          control={[Function]}
+        >
+          Submit
+        </FormButton>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <FormInput
+              as={[Function]}
+              control={[Function]}
+              label="Name"
+              name="name"
+              onChange={[Function]}
+              placeholder="Name"
+              value=""
+            />,
+            <FormSelect
+              as={[Function]}
+              control={[Function]}
+              label="Threat"
+              name="threat"
+              onChange={[Function]}
+              options={
+                Array [
+                  Object {
+                    "key": 1,
+                    "text": "Great",
+                    "value": "1",
+                  },
+                  Object {
+                    "key": 2,
+                    "text": "Good",
+                    "value": "2",
+                  },
+                  Object {
+                    "key": 3,
+                    "text": "OK",
+                    "value": "3",
+                  },
+                  Object {
+                    "key": 4,
+                    "text": "Eat less",
+                    "value": "4",
+                  },
+                  Object {
+                    "key": 5,
+                    "text": "Don't eat",
+                    "value": "5",
+                  },
+                ]
+              }
+              placeholder="Threat"
+              value=""
+            />,
+            <FormSelect
+              as={[Function]}
+              control={[Function]}
+              label="Method"
+              name="method"
+              onChange={[Function]}
+              options={
+                Array [
+                  Object {
+                    "key": 1,
+                    "text": "Farmed",
+                    "value": "1",
+                  },
+                  Object {
+                    "key": 2,
+                    "text": "Jig",
+                    "value": "2",
+                  },
+                  Object {
+                    "key": 3,
+                    "text": "Troll",
+                    "value": "3",
+                  },
+                  Object {
+                    "key": 4,
+                    "text": "Long line",
+                    "value": "4",
+                  },
+                  Object {
+                    "key": 5,
+                    "text": "Net",
+                    "value": "5",
+                  },
+                  Object {
+                    "key": 6,
+                    "text": "Diving",
+                    "value": "6",
+                  },
+                  Object {
+                    "key": 7,
+                    "text": "Baited pots",
+                    "value": "7",
+                  },
+                  Object {
+                    "key": 8,
+                    "text": "Mid-water trawl",
+                    "value": "8",
+                  },
+                  Object {
+                    "key": 9,
+                    "text": "Bottom trawl",
+                    "value": "9",
+                  },
+                  Object {
+                    "key": 10,
+                    "text": "Dredge",
+                    "value": "10",
+                  },
+                  Object {
+                    "key": 11,
+                    "text": "Trawl",
+                    "value": "11",
+                  },
+                ]
+              }
+              placeholder="Method"
+            />,
+          ],
+          "widths": "equal",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "as": [Function],
+              "control": [Function],
+              "label": "Name",
+              "name": "name",
+              "onChange": [Function],
+              "placeholder": "Name",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "as": [Function],
+              "control": [Function],
+              "label": "Threat",
+              "name": "threat",
+              "onChange": [Function],
+              "options": Array [
+                Object {
+                  "key": 1,
+                  "text": "Great",
+                  "value": "1",
+                },
+                Object {
+                  "key": 2,
+                  "text": "Good",
+                  "value": "2",
+                },
+                Object {
+                  "key": 3,
+                  "text": "OK",
+                  "value": "3",
+                },
+                Object {
+                  "key": 4,
+                  "text": "Eat less",
+                  "value": "4",
+                },
+                Object {
+                  "key": 5,
+                  "text": "Don't eat",
+                  "value": "5",
+                },
+              ],
+              "placeholder": "Threat",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "as": [Function],
+              "control": [Function],
+              "label": "Method",
+              "name": "method",
+              "onChange": [Function],
+              "options": Array [
+                Object {
+                  "key": 1,
+                  "text": "Farmed",
+                  "value": "1",
+                },
+                Object {
+                  "key": 2,
+                  "text": "Jig",
+                  "value": "2",
+                },
+                Object {
+                  "key": 3,
+                  "text": "Troll",
+                  "value": "3",
+                },
+                Object {
+                  "key": 4,
+                  "text": "Long line",
+                  "value": "4",
+                },
+                Object {
+                  "key": 5,
+                  "text": "Net",
+                  "value": "5",
+                },
+                Object {
+                  "key": 6,
+                  "text": "Diving",
+                  "value": "6",
+                },
+                Object {
+                  "key": 7,
+                  "text": "Baited pots",
+                  "value": "7",
+                },
+                Object {
+                  "key": 8,
+                  "text": "Mid-water trawl",
+                  "value": "8",
+                },
+                Object {
+                  "key": 9,
+                  "text": "Bottom trawl",
+                  "value": "9",
+                },
+                Object {
+                  "key": 10,
+                  "text": "Dredge",
+                  "value": "10",
+                },
+                Object {
+                  "key": 11,
+                  "text": "Trawl",
+                  "value": "11",
+                },
+              ],
+              "placeholder": "Method",
+              "value": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "as": [Function],
+          "control": [Function],
+          "label": "Description",
+          "name": "description",
+          "onChange": [Function],
+          "placeholder": "Description",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "as": [Function],
+          "children": "Submit",
+          "control": [Function],
+        },
+        "ref": null,
+        "rendered": "Submit",
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "as": "form",
+        "children": Array [
+          <FormGroup
+            widths="equal"
+          >
+            <FormInput
+              as={[Function]}
+              control={[Function]}
+              label="Name"
+              name="name"
+              onChange={[Function]}
+              placeholder="Name"
+              value=""
+            />
+            <FormSelect
+              as={[Function]}
+              control={[Function]}
+              label="Threat"
+              name="threat"
+              onChange={[Function]}
+              options={
+                Array [
+                  Object {
+                    "key": 1,
+                    "text": "Great",
+                    "value": "1",
+                  },
+                  Object {
+                    "key": 2,
+                    "text": "Good",
+                    "value": "2",
+                  },
+                  Object {
+                    "key": 3,
+                    "text": "OK",
+                    "value": "3",
+                  },
+                  Object {
+                    "key": 4,
+                    "text": "Eat less",
+                    "value": "4",
+                  },
+                  Object {
+                    "key": 5,
+                    "text": "Don't eat",
+                    "value": "5",
+                  },
+                ]
+              }
+              placeholder="Threat"
+              value=""
+            />
+            <FormSelect
+              as={[Function]}
+              control={[Function]}
+              label="Method"
+              name="method"
+              onChange={[Function]}
+              options={
+                Array [
+                  Object {
+                    "key": 1,
+                    "text": "Farmed",
+                    "value": "1",
+                  },
+                  Object {
+                    "key": 2,
+                    "text": "Jig",
+                    "value": "2",
+                  },
+                  Object {
+                    "key": 3,
+                    "text": "Troll",
+                    "value": "3",
+                  },
+                  Object {
+                    "key": 4,
+                    "text": "Long line",
+                    "value": "4",
+                  },
+                  Object {
+                    "key": 5,
+                    "text": "Net",
+                    "value": "5",
+                  },
+                  Object {
+                    "key": 6,
+                    "text": "Diving",
+                    "value": "6",
+                  },
+                  Object {
+                    "key": 7,
+                    "text": "Baited pots",
+                    "value": "7",
+                  },
+                  Object {
+                    "key": 8,
+                    "text": "Mid-water trawl",
+                    "value": "8",
+                  },
+                  Object {
+                    "key": 9,
+                    "text": "Bottom trawl",
+                    "value": "9",
+                  },
+                  Object {
+                    "key": 10,
+                    "text": "Dredge",
+                    "value": "10",
+                  },
+                  Object {
+                    "key": 11,
+                    "text": "Trawl",
+                    "value": "11",
+                  },
+                ]
+              }
+              placeholder="Method"
+            />
+          </FormGroup>,
+          <FormTextArea
+            as={[Function]}
+            control={[Function]}
+            label="Description"
+            name="description"
+            onChange={[Function]}
+            placeholder="Description"
+            value=""
+          />,
+          <FormButton
+            as={[Function]}
+            control={[Function]}
+          >
+            Submit
+          </FormButton>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <FormInput
+                as={[Function]}
+                control={[Function]}
+                label="Name"
+                name="name"
+                onChange={[Function]}
+                placeholder="Name"
+                value=""
+              />,
+              <FormSelect
+                as={[Function]}
+                control={[Function]}
+                label="Threat"
+                name="threat"
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "key": 1,
+                      "text": "Great",
+                      "value": "1",
+                    },
+                    Object {
+                      "key": 2,
+                      "text": "Good",
+                      "value": "2",
+                    },
+                    Object {
+                      "key": 3,
+                      "text": "OK",
+                      "value": "3",
+                    },
+                    Object {
+                      "key": 4,
+                      "text": "Eat less",
+                      "value": "4",
+                    },
+                    Object {
+                      "key": 5,
+                      "text": "Don't eat",
+                      "value": "5",
+                    },
+                  ]
+                }
+                placeholder="Threat"
+                value=""
+              />,
+              <FormSelect
+                as={[Function]}
+                control={[Function]}
+                label="Method"
+                name="method"
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "key": 1,
+                      "text": "Farmed",
+                      "value": "1",
+                    },
+                    Object {
+                      "key": 2,
+                      "text": "Jig",
+                      "value": "2",
+                    },
+                    Object {
+                      "key": 3,
+                      "text": "Troll",
+                      "value": "3",
+                    },
+                    Object {
+                      "key": 4,
+                      "text": "Long line",
+                      "value": "4",
+                    },
+                    Object {
+                      "key": 5,
+                      "text": "Net",
+                      "value": "5",
+                    },
+                    Object {
+                      "key": 6,
+                      "text": "Diving",
+                      "value": "6",
+                    },
+                    Object {
+                      "key": 7,
+                      "text": "Baited pots",
+                      "value": "7",
+                    },
+                    Object {
+                      "key": 8,
+                      "text": "Mid-water trawl",
+                      "value": "8",
+                    },
+                    Object {
+                      "key": 9,
+                      "text": "Bottom trawl",
+                      "value": "9",
+                    },
+                    Object {
+                      "key": 10,
+                      "text": "Dredge",
+                      "value": "10",
+                    },
+                    Object {
+                      "key": 11,
+                      "text": "Trawl",
+                      "value": "11",
+                    },
+                  ]
+                }
+                placeholder="Method"
+              />,
+            ],
+            "widths": "equal",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": [Function],
+                "control": [Function],
+                "label": "Name",
+                "name": "name",
+                "onChange": [Function],
+                "placeholder": "Name",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": [Function],
+                "control": [Function],
+                "label": "Threat",
+                "name": "threat",
+                "onChange": [Function],
+                "options": Array [
+                  Object {
+                    "key": 1,
+                    "text": "Great",
+                    "value": "1",
+                  },
+                  Object {
+                    "key": 2,
+                    "text": "Good",
+                    "value": "2",
+                  },
+                  Object {
+                    "key": 3,
+                    "text": "OK",
+                    "value": "3",
+                  },
+                  Object {
+                    "key": 4,
+                    "text": "Eat less",
+                    "value": "4",
+                  },
+                  Object {
+                    "key": 5,
+                    "text": "Don't eat",
+                    "value": "5",
+                  },
+                ],
+                "placeholder": "Threat",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "as": [Function],
+                "control": [Function],
+                "label": "Method",
+                "name": "method",
+                "onChange": [Function],
+                "options": Array [
+                  Object {
+                    "key": 1,
+                    "text": "Farmed",
+                    "value": "1",
+                  },
+                  Object {
+                    "key": 2,
+                    "text": "Jig",
+                    "value": "2",
+                  },
+                  Object {
+                    "key": 3,
+                    "text": "Troll",
+                    "value": "3",
+                  },
+                  Object {
+                    "key": 4,
+                    "text": "Long line",
+                    "value": "4",
+                  },
+                  Object {
+                    "key": 5,
+                    "text": "Net",
+                    "value": "5",
+                  },
+                  Object {
+                    "key": 6,
+                    "text": "Diving",
+                    "value": "6",
+                  },
+                  Object {
+                    "key": 7,
+                    "text": "Baited pots",
+                    "value": "7",
+                  },
+                  Object {
+                    "key": 8,
+                    "text": "Mid-water trawl",
+                    "value": "8",
+                  },
+                  Object {
+                    "key": 9,
+                    "text": "Bottom trawl",
+                    "value": "9",
+                  },
+                  Object {
+                    "key": 10,
+                    "text": "Dredge",
+                    "value": "10",
+                  },
+                  Object {
+                    "key": 11,
+                    "text": "Trawl",
+                    "value": "11",
+                  },
+                ],
+                "placeholder": "Method",
+                "value": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "as": [Function],
+            "control": [Function],
+            "label": "Description",
+            "name": "description",
+            "onChange": [Function],
+            "placeholder": "Description",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "as": [Function],
+            "children": "Submit",
+            "control": [Function],
+          },
+          "ref": null,
+          "rendered": "Submit",
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
