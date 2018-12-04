@@ -20,3 +20,27 @@ test('get returns fish', () => {
     })
     .catch(err => expect(err).toBeNull())
 })
+
+// test('', () => {
+//   expect.assertions(1)
+//   const expected = 13
+
+//   const fish = {
+//     name,
+//     level_id: levelId,
+//     method_id: methodId
+//   }
+//   const detail = {
+//     description,
+//     image,
+//     link,
+//     video
+//   }
+
+//   return db.createFish(fish, detail, testDb)
+//     .then(fish => {
+//       const actual = fish.length
+//       expect(actual).toBe(expected)
+//     })
+//     .catch(err => expect(err).toBeTruthy())
+// })
