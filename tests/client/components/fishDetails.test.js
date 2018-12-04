@@ -1,7 +1,7 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 import {Header, Button} from 'semantic-ui-react'
-import {FishDetails} from '../../client/components/FishDetails'
+import {FishDetails} from '../../../client/components/FishDetails'
 
 test('FishDetails page (header) should show fish name', () => {
   const expected = 'kahawai'

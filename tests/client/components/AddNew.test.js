@@ -1,7 +1,7 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 
-import AddNew from '../../client/components/AddNew'
+import AddNew from '../../../client/components/AddNew'
 
 describe('AddNew', () => {
   it('should render correctly in "debug" mode', () => {
