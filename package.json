@@ -10,7 +10,7 @@
     "client": "webpack-dev-server --hot --inline",
     "dev": "nodemon server & webpack --watch",
     "server": "node server",
-    "server:debug": "node --inspect server",
+    "server:debug": "nodemon --inspect server",
     "start": "webpack && node server",
     "test": "jest --watchAll",
     "test:ci": "jest",
@@ -61,6 +61,7 @@
     "nodemon": "^1.18.7",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
+    "react-test-renderer": "^16.6.3",
     "supertest": "^3.3.0",
     "webpack": "^3.12.0",
     "webpack-dev-server": "^2.11.1"

@@ -7,7 +7,15 @@ const fishDetails = require('../db/fishDetails')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  fish.get().then(fish => res.status(200).json(fish))
+  fish.get()
+    .then(fish => res.status(200).json({
+      ok: true,
+      fish
+    }))
+    .catch(err => res.status(500).json({
+      ok: false,
+      error: err.message
+    }))
 })
 
 router.get('/:id', (req, res) => {
@@ -39,4 +47,16 @@ router.post('/', (req, res) => {
     .catch((err) => res.json({ Okay: false, error: err.message }))
 })
 
+router.post('/delete/:id', (req, res) => {
+  const fishId = Number(req.params.id)
+  fishDetails
+    .deleteFishDetail(fishId)
+    .then(()=> { 
+      fish
+        .deleteFish(fishId)
+        .then(res.send(`deleted fish with id ${fishId}`))
+        // .catch((err) => res.json({ Okay: false, error: err.message }))   
+  })
+})
+   
 module.exports = router
