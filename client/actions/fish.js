@@ -20,10 +20,10 @@ export function getFishDetailSuccess (fishDetail) {
   }
 }
 
-export function addNewFishSuccess (fishDetail) {
+export function addNewFishSuccess (newFish) {
   return {
     type: 'ADD_NEW_FISH_SUCCESS',
-    addNewFish
+    newFish
   }
 }
 export function getFishError (message) {
@@ -98,14 +98,13 @@ export function searchFish (searchedFish) {
 }
 
 export function addNewFish (newFish) {
-  console.log('action')
   return dispatch => {
     dispatch(getFishPending())
     return request
       .post('/api/v1/fish/')
       .send(newFish)
       .then(res => {
-        dispatch(addNewFishSuccess())
+        dispatch(addNewFishSuccess(res.body))
       })
       .catch(err => dispatch(getFishError(err.message)))
   }
