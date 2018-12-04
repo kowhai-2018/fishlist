@@ -23,7 +23,7 @@ export class FishDetails extends React.Component {
               <Icon onClick={() => history.back()} color='green' name='arrow circle left' size='huge' />
             </Grid.Column>
             <Grid.Column>
-              <Header size='huge' textAlign='center'>{this.props.fishDetails.name} <em>{this.props.fishDetails.method}</em>
+              <Header size='huge' textAlign='center'>{this.props.fishDetails.name} <em>{this.props.fishDetails.method && '(' + this.props.fishDetails.method + ')'}</em>
                 <h3>{this.props.fishDetails.level}</h3></Header>
             </Grid.Column>
             <Grid.Column>
