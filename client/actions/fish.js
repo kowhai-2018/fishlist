@@ -20,6 +20,12 @@ export function getFishDetailSuccess (fishDetail) {
   }
 }
 
+export function addNewFishSuccess (newFish) {
+  return {
+    type: 'ADD_NEW_FISH_SUCCESS',
+    newFish
+  }
+}
 export function getFishError (message) {
   return {
     type: 'GET_FISH_ERROR',
@@ -88,5 +94,18 @@ export function searchFish (searchedFish) {
   return {
     type: 'SEARCH_FISH',
     searchedFish
+  }
+}
+
+export function addNewFish (newFish) {
+  return dispatch => {
+    dispatch(getFishPending())
+    return request
+      .post('/api/v1/fish/')
+      .send(newFish)
+      .then(res => {
+        dispatch(addNewFishSuccess(res.body))
+      })
+      .catch(err => dispatch(getFishError(err.message)))
   }
 }
