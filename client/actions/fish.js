@@ -90,3 +90,41 @@ export function searchFish (searchedFish) {
     searchedFish
   }
 }
+
+export function delFishDetail (fishId) {
+  return dispatch => {
+    dispatch(delFishPending())
+
+    request
+      .post(`/api/v1/fish/delete/${fishId}`)
+      .then(res => dispatch(delFishDetailSuccess(res.body)))
+      .catch(err => dispatch(delFishError(err.message)))
+  }
+}
+
+export function delFishPending () {
+  return {
+    type: 'DEL_FISH_PENDING'
+  }
+}
+
+export function delFishSuccess (fish) {
+  return {
+    type: 'DEL_FISH_SUCCESS',
+    fish
+  }
+}
+
+export function delFishDetailSuccess (fishDetail) {
+  return {
+    type: 'DEL_FISH_DETAIL_SUCCESS',
+    fishDetail
+  }
+}
+
+export function delFishError (message) {
+  return {
+    type: 'DEL_FISH_ERROR',
+    message
+  }
+}
