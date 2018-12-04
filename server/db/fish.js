@@ -34,6 +34,8 @@ function deleteFish (
   return db('fish')
         .where('id', fishId)
         .del()
+        // .catch((err) => {return err})
+
 }
 
 
